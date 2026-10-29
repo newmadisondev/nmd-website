@@ -25,7 +25,11 @@ Each one is easy to change. Later instructions from William replaced earlier one
 - **Contact:** email and phone links, no form. Eric Welch shown with title and email.
 
 ## Map
-- Online map services were not reachable from the build environment, so the map is a hand-drawn schematic (lakes Mendota, Monona and Wingra, the Capitol, East Washington Avenue) with pins at approximate positions. It is labeled "Schematic map; locations approximate." No third-party map tiles or tracking.
+- **OpenStreetMap street map, as on the Principal Madison site** (William's request). It is shown with Leaflet, which is bundled in `assets/vendor/leaflet/` (BSD license), so it doesn't depend on a CDN. Standard OpenStreetMap tiles are toned to dark charcoal with a CSS filter, so the map matches the Haussmann-style dark map section. White numbered pins match the numbered list; hovering a list row lights its pin.
+- Scroll-wheel zoom is off so the map doesn't trap page scrolling, and on phones one finger scrolls the page (zoom with the +/- buttons).
+- Attribution "© OpenStreetMap contributors" is shown as OpenStreetMap requires. OpenStreetMap's free tile server is fine for a small company site. If traffic ever grows a lot, switch the tile address in `projects-map.js` to a paid tile provider.
+- **Pin positions are estimates.** Address lookup services were blocked from the build environment, so only Trader's Way has a published nearby coordinate (6614 Old Sauk Rd). The other four were placed by hand and must be checked (see next-steps).
+- Without JavaScript, the earlier simple drawn map shows instead.
 
 ## Technical
 - Plain HTML/CSS/JS, no build step, relative links (works on a custom domain, at a `github.io/nmd-website/` address, or opened from disk).

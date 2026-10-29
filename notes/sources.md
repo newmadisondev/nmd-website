@@ -3,7 +3,7 @@
 ## Used on the site
 - `content/content-v3.md` (William's content, merged from `main`). Every fact on the site comes from this file. It replaces `content.md` and `content-v2.md`.
 - Photos: `content/photos/` (William's files, including `starkweather-drone.jpg` and `starkweather-photo-2.jpg`). Logos: `content/logo/`.
-- Map: Lake shapes and pin positions are hand-drawn approximations; nothing was copied from a map service. (Natural Earth, public domain, https://www.naturalearthdata.com, was looked at for Lake Mendota but its outline was too coarse to use.)
+- Map: street map tiles © OpenStreetMap contributors (https://www.openstreetmap.org/copyright), displayed with Leaflet 1.9.4 (https://leafletjs.com, BSD 2-Clause, `assets/vendor/leaflet/LICENSE.txt`). Trader's Way pin taken from the coordinates for neighboring 6614 Old Sauk Road on Walk Score (https://www.walkscore.com/score/loc/lat=43.0750/lng=-89.4965). Other pin positions are estimates. The no-JavaScript fallback drawing's lake shapes are hand-drawn approximations.
 - Fonts: Hanken Grotesk and Instrument Serif, Google Fonts (https://fonts.google.com), SIL Open Font License (`assets/fonts/OFL-*.txt`).
 
 ## Looked at early, not used

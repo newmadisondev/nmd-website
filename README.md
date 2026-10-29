@@ -46,7 +46,11 @@ Photo frames crop automatically to fit, so any reasonably sized landscape photo 
 
 ## The project map
 
-The map on Home and Projects is a simple drawing (SVG) inside the HTML, not Google Maps. Each pin is a `<circle>` inside an `<a class="map-pin">` with the project's link. To move a pin, change its `cx` and `cy` numbers (and the matching `<text>` x/y just after it). Locations are approximate on purpose.
+The map on Home and Projects is a real street map from **OpenStreetMap**, shown with the free Leaflet map library (bundled in `assets/vendor/leaflet/`, no account or key needed). It is toned dark to match the site.
+
+**To move a pin:** open `assets/js/projects-map.js`. Each project has a line with `lat` and `lng`. In Google Maps, right-click the building, click the coordinates at the top of the menu to copy them, and paste the two numbers in. Save; that's it.
+
+If JavaScript is off, a simple drawn map shows instead.
 
 ## Change colors or fonts
 
