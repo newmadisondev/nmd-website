@@ -1,15 +1,17 @@
 /* Project map — OpenStreetMap street map (via Leaflet), shown in the dark map section.
  *
+ * Pins are placed from each project's geocoded street address.
  * TO MOVE A PIN: open Google Maps, right-click the building, click the coordinates
- * at the top of the menu to copy them (e.g. 43.0802, -89.3727), and paste them below.
+ * at the top of the menu to copy them (e.g. 43.0812, -89.3733), and paste them below.
  * The numbers must stay in the same order as the list next to the map.
  */
 var NMD_PROJECTS = [
-  { num: 1, slug: 'starkweather-place', name: 'Starkweather Place',     lat: 43.0985, lng: -89.3315 },
-  { num: 2, slug: 'traders-way',        name: 'Trader’s Way',      lat: 43.0750, lng: -89.4962 },
-  { num: 3, slug: 'the-tinsmith',       name: 'The Tinsmith',           lat: 43.0802, lng: -89.3727 },
-  { num: 4, slug: 'dickinson-street',   name: '210 S Dickinson Street', lat: 43.0857, lng: -89.3667 },
-  { num: 5, slug: 'northern-court',     name: 'Northern Court',         lat: 43.0893, lng: -89.3645 }
+  // Coordinates are the geocoded street addresses (sources in notes/sources.md).
+  { num: 1, slug: 'starkweather-place', name: 'Starkweather Place',     lat: 43.10188, lng: -89.33048 }, // 215 N Fair Oaks Ave
+  { num: 2, slug: 'traders-way',        name: 'Trader\u2019s Way',      lat: 43.07522, lng: -89.49456 }, // 6624 Old Sauk Rd
+  { num: 3, slug: 'the-tinsmith',       name: 'The Tinsmith',           lat: 43.08116, lng: -89.37333 }, // 828 E Main St
+  { num: 4, slug: 'dickinson-street',   name: '210 S Dickinson Street', lat: 43.08645, lng: -89.36203 }, // 210 S Dickinson St
+  { num: 5, slug: 'northern-court',     name: 'Northern Court',         lat: 43.08743, lng: -89.36233 }  // between 1401 and 1413 Northern Ct
 ];
 
 (function () {
@@ -45,7 +47,29 @@ var NMD_PROJECTS = [
     m.on('click', function () { m.openPopup(); });
     markers.push({ slug: p.slug, marker: m });
   });
+  // Keep neighbouring pins readable when zoomed out: pins closer than one pin-width are
+  // nudged apart on screen only. Their map positions stay exact, and the nudge disappears as you zoom in.
+  var PIN = 32;
+  function declutter() {
+    var pts = markers.map(function (x) { return map.latLngToContainerPoint(x.marker.getLatLng()); });
+    var off = markers.map(function () { return { x: 0, y: 0 }; });
+    for (var i = 0; i < pts.length; i++) {
+      for (var j = i + 1; j < pts.length; j++) {
+        var dx = pts[j].x - pts[i].x, dy = pts[j].y - pts[i].y, d = Math.sqrt(dx * dx + dy * dy);
+        if (d >= PIN) continue;
+        var ux = d ? dx / d : 0, uy = d ? dy / d : 1, push = (PIN - d) / 2;
+        off[i].x -= ux * push; off[i].y -= uy * push;
+        off[j].x += ux * push; off[j].y += uy * push;
+      }
+    }
+    markers.forEach(function (x, k) {
+      var span = x.marker.getElement() && x.marker.getElement().querySelector('span');
+      if (span) span.style.translate = Math.round(off[k].x) + 'px ' + Math.round(off[k].y) + 'px';
+    });
+  }
+  map.on('zoomend', declutter);
   map.fitBounds(L.featureGroup(markers.map(function (x) { return x.marker; })).getBounds(), { padding: [48, 48] });
+  declutter();
 
   function highlight(slug, on) {
     document.querySelectorAll('.map-list [data-pin="' + slug + '"]').forEach(function (a) { a.classList.toggle('is-active', on); });

@@ -31,7 +31,7 @@ Each one is easy to change. Later instructions from William replaced earlier one
 - **OpenStreetMap street map, as on the Principal Madison site** (William's request). It is shown with Leaflet, which is bundled in `assets/vendor/leaflet/` (BSD license), so it doesn't depend on a CDN. Standard OpenStreetMap tiles are toned to dark charcoal with a CSS filter, so the map matches the Haussmann-style dark map section. White numbered pins match the numbered list; hovering a list row lights its pin.
 - Scroll-wheel zoom is off so the map doesn't trap page scrolling, and on phones one finger scrolls the page (zoom with the +/- buttons).
 - Attribution "© OpenStreetMap contributors" is shown as OpenStreetMap requires. OpenStreetMap's free tile server is fine for a small company site. If traffic ever grows a lot, switch the tile address in `projects-map.js` to a paid tile provider.
-- **Pin positions are estimates.** Address lookup services were blocked from the build environment, so only Trader's Way has a published nearby coordinate (6614 Old Sauk Rd). The other four were placed by hand and must be checked (see next-steps).
+- **Pins are placed from each geocoded street address** (sources in notes/sources.md). Northern Court's pin sits between 1401 and 1413. Dickinson and Northern Court are only about 110 m apart, so when zoomed out they are nudged apart on screen to stay readable. Zoom in and they sit at their exact positions.
 - Without JavaScript, the earlier simple drawn map shows instead.
 
 ## Technical

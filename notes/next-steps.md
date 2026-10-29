@@ -4,7 +4,7 @@ There are **no placeholders on the site**. Everything visible comes from `conten
 
 ## Please check before launch
 1. **Headlines and framing lines** (not facts, edit freely): "Madison, built forward.", "Featured projects.", "Across Madison.", "Where we build.", "Five projects. All completed.", "Two partners. One city.", "Let's talk.", "Talk with William."
-2. **Map pin positions — please fix before launch.** The map is a real OpenStreetMap street map now, so a pin in the wrong spot will be visible. Only Trader's Way is based on a published coordinate; Starkweather Place, The Tinsmith, 210 S Dickinson and Northern Court are estimates. Fix each in `assets/js/projects-map.js` (Google Maps → right-click the building → copy coordinates). Takes about five minutes.
+2. **Map:** pins are placed from the geocoded addresses. Give the map one look in a browser; the street map couldn't be viewed from the build environment.
 3. **Starkweather Place:** "95% leased by mid-2026" is shown (it is in the content file). Remove it if you'd rather not.
 4. **Northern Court tenants** and the Imaginary Factory founder's James Beard finalist line.
 5. **210 S Dickinson photo crops** (four images cut from one sheet).
