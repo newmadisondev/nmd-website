@@ -1,0 +1,5 @@
+# GitHub Pages: publish the site only, not the working files
+exclude:
+  - content/
+  - tools/
+  - README.md
