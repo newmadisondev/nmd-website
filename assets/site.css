@@ -51,7 +51,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--patina);outline-off
 /* hero */
 .hero{position:relative;min-height:min(88vh,860px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#2a3328}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,11,.45) 0%,rgba(10,12,11,0) 28%,rgba(10,12,11,0) 45%,rgba(10,12,11,.62) 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,11,.45) 0%,rgba(10,12,11,0) 26%,rgba(10,12,11,.08) 40%,rgba(10,12,11,.72) 100%)}
+.hero h1{text-shadow:0 2px 30px rgba(0,0,0,.25)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-block:0 56px}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,8.4vw,132px);line-height:.92;letter-spacing:-.015em;margin:0;max-width:11em;text-wrap:balance}
 .hero h1 em{font-style:italic;font-weight:300}
@@ -101,9 +102,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--patina);outline-off
 .map .cap-mark{fill:var(--night-fg)}
 .map .cap-label{fill:var(--night-dim);font-family:var(--mono);font-size:13px;letter-spacing:.08em}
 .map .pin circle{fill:var(--night-fg)}
-.map .pin text{fill:var(--night);font-family:var(--mono);font-size:13px;font-weight:600}
+.map .pin text{fill:var(--night);font-family:var(--mono);font-size:15px;font-weight:600}
 .map .pin.active circle,.map .pin:hover circle{fill:#9CC2B1}
-.map .note{fill:#5B605C;font-family:var(--mono);font-size:11px;letter-spacing:.06em}
+.map .note{fill:#7A7F7A;font-family:var(--mono);font-size:13px;letter-spacing:.06em}
 .key{list-style:none;margin:0;padding:0;border-top:1px solid #2E3230}
 .key li{border-bottom:1px solid #2E3230}
 .key a{display:grid;grid-template-columns:44px minmax(0,1fr);gap:8px;padding:18px 0;text-decoration:none}

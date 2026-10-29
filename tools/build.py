@@ -105,6 +105,12 @@ PEOPLE = [("William Butcher", "Partner", "More than 24 years in Madison commerci
           ("Stone House Development", "Joint venture partner", "Starkweather Place and Trader’s Way.")]
 
 e = html.escape
+BIG = {"starkweather-drone.jpg", "starkweather-creek.jpg", "tinsmith-solarium.jpg", "northern-court-patio.jpg"}
+def srcset(img, up=""):
+    if img in BIG:
+        stem = img[:-4]
+        return f' srcset="{up}img/{stem}-1000.jpg 1000w, {up}img/{img} 2000w" sizes="100vw"'
+    return ""
 
 def head(title, desc, depth=0):
     up = "../" * depth
@@ -117,7 +123,8 @@ def head(title, desc, depth=0):
 <meta name="description" content="{e(desc)}">
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
-<meta property="og:image" content="{up}img/starkweather-drone.jpg">
+<meta property="og:image" content="https://newmadisondev.github.io/nmd-website/img/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{up}img/nmd-logo-circle-ink.png">
 {FONTS}
 <link rel="stylesheet" href="{up}assets/site.css">
@@ -148,7 +155,7 @@ def footer(depth=0):
 """
 
 # ---------- schematic map ----------
-LON0, LON1, LAT0, LAT1 = -89.53, -89.30, 43.03, 43.155
+LON0, LON1, LAT0, LAT1 = -89.525, -89.318, 43.032, 43.153
 W = 1000
 KX = W / (LON1 - LON0)
 KY = KX / 0.7314  # cos(43.07)
@@ -178,7 +185,7 @@ def map_svg():
     for i, p in enumerate(PROJECTS, 1):
         x, y = xy(p["lat"], p["lon"])
         pins.append(f'<a href="projects/{p["slug"]}.html" class="pin" data-n="{i}" aria-label="{e(p["name"])}">'
-                    f'<circle cx="{x}" cy="{y}" r="15"/><text x="{x}" y="{y + 4.5}" text-anchor="middle">{i}</text></a>')
+                    f'<circle cx="{x}" cy="{y}" r="17"/><text x="{x}" y="{y + 5}" text-anchor="middle">{i}</text></a>')
     m = xy(43.118, -89.425)
     n = xy(43.055, -89.356)
     ex = xy(43.0830, -89.5200); ey = xy(43.0990, -89.3050)
@@ -199,7 +206,7 @@ def map_svg():
 # ---------- pages ----------
 def index():
     cards = "".join(f"""<a class="card" href="projects/{p['slug']}.html">
-<div class="ph"><img src="img/{p['card_img']}" alt="{e(p['name'])}" loading="lazy"><span class="num">{i:02d}</span></div>
+<div class="ph"><img src="img/{p['card_img']}"{srcset(p['card_img']).replace('sizes="100vw"','sizes="(max-width:1100px) 80vw, 20vw"')} alt="{e(p['name'])}" loading="lazy"><span class="num">{i:02d}</span></div>
 <h3>{e(p['name'])}</h3>
 <div class="meta">{e(p['area'])}<br>{e(p['units'])} · {e(p['year'])}</div>
 <span class="go">View project</span></a>""" for i, p in enumerate(PROJECTS, 1))
@@ -211,7 +218,7 @@ def index():
     return (head("New Madison Development", "Madison, Wisconsin development company led by William Butcher and Eric Welch. New housing and new uses for older industrial buildings.")
             + header() + f"""<main>
 <section class="hero">
-<img src="img/starkweather-drone.jpg" alt="Aerial view of Starkweather Creek beside Starkweather Place" fetchpriority="high">
+<img src="img/starkweather-drone.jpg"{srcset("starkweather-drone.jpg")} alt="Aerial view of Starkweather Creek beside Starkweather Place" fetchpriority="high">
 <div class="wrap">
 <h1>New housing. <em>Second lives</em> for old buildings.</h1>
 <div class="cap"><span>Madison, Wisconsin</span><span>Starkweather Creek, Starkweather Place</span></div>
@@ -283,7 +290,7 @@ def project_page(i, p):
 <figure style="margin:0;max-width:1100px"><img src="../img/{p['hero_img']}" alt="{e(p['name'])}">{f'<figcaption class="mono" style="color:var(--stone);margin-top:8px">{e(p["hero_cap"])}</figcaption>' if p.get("hero_cap") else ""}</figure></div></section>"""
     else:
         top = f"""<section class="p-hero">
-<img src="../img/{p['hero_img']}" alt="{e(p['name'])}">
+<img src="../img/{p['hero_img']}"{srcset(p['hero_img'], "../")} alt="{e(p['name'])}">
 <div class="wrap"><p class="eyebrow">{eyebrow}</p><h1>{e(p['name'])}</h1></div>
 </section>"""
     return (head(f"{p['name']} · New Madison Development", p["lede"], 1) + header(1, bool(p.get("framed"))) + f"""<main>
