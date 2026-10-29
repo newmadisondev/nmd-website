@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand sheet — New Madison Development</title>
+<meta name="description" content="New Madison Development brand sheet: logo, color, type and tone.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="New Madison Development">
+<meta property="og:title" content="Brand sheet — New Madison Development">
+<meta property="og:description" content="New Madison Development brand sheet: logo, color, type and tone.">
+<meta name="theme-color" content="#F5F4F0">
+<link rel="icon" type="image/png" href="../assets/img/logo/favicon-64.png">
+<link rel="apple-touch-icon" href="../assets/img/logo/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="../assets/js/site.js" defer></script>
+<meta name="robots" content="noindex">
+<style>
+.logo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 32px 0; }
+.logo-tile { background: #fff; border: 1px solid var(--line); padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; }
+.logo-tile img { max-height: 200px; width: auto; }
+.logo-tile--dark { background: var(--charcoal); border-color: var(--charcoal); }
+.logo-tile--dark figcaption { color: var(--muted-dark); }
+.rules { padding-left: 1.1em; margin: 0 0 24px; }
+.rules li { margin-bottom: 8px; }
+.downloads { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; }
+.downloads .label { width: 100%; }
+.swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0 16px; }
+.chip { aspect-ratio: 1; border: 1px solid rgba(26,26,26,.12); }
+.swatch p { margin: 0; }
+.swatch-name { margin-top: 10px !important; font-weight: 600; }
+.swatch-hex { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .875rem; }
+.swatch-use { font-size: .8125rem; color: var(--muted); }
+.note { font-size: .875rem; color: var(--muted); }
+.type-spec { margin-bottom: 40px; }
+.spec-sans { font-size: clamp(2.2rem, 4.5vw, 4rem); line-height: 1.02; letter-spacing: -0.035em; font-weight: 300; margin: 12px 0; }
+.spec-serif { font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 4rem); line-height: 1.02; margin: 12px 0; }
+.spec-label { font-size: .75rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; margin: 12px 0; }
+@media (max-width: 820px) { .logo-grid { grid-template-columns: 1fr; } .swatches { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER (same on every page) ============ -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="New Madison Development — home">
+      <img class="logo-dark" src="../assets/img/logo/nmd-logo-square-black.png" alt="New Madison Development" width="480" height="362">
+      <img class="logo-light" src="../assets/img/logo/nmd-logo-square-white.png" alt="" width="480" height="362">
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span class="sr-only">Menu</span></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="../about.html">About</a>
+      <a href="../projects/index.html">Projects</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-intro">
+    <div class="wrap">
+      <span class="label">Brand sheet</span>
+      <h1 class="h1">New Madison Development.</h1>
+      <p class="lede">One page for anyone making something with the NMD name on it: the logo, the colors, the type and the tone.</p>
+    </div>
+  </section>
+  <section class="section--tight" style="padding-top:0">
+    <div class="wrap">
+      <div class="split block">
+        <div class="col-label"><span class="label">01 — Logo</span></div>
+        <div class="col-body">
+          <p class="prose">The NMD logo is the line-art capitol dome over NEW MADISON DEVELOPMENT, with water lines. It comes as a square frame and a circle and is <strong>always used exactly as drawn</strong>. The only permitted change is removing the white background (black on transparent), or the same artwork in white for photos and dark backgrounds.</p>
+          <div class="logo-grid">
+            <figure class="logo-tile"><img src="../assets/img/logo/nmd-logo-square-black.png" alt="NMD square logo, black" width="480" height="362"><figcaption>Square · black</figcaption></figure>
+            <figure class="logo-tile"><img src="../assets/img/logo/nmd-logo-circle-black.png" alt="NMD circle logo, black" width="480" height="479"><figcaption>Circle · black</figcaption></figure>
+            <figure class="logo-tile logo-tile--dark"><img src="../assets/img/logo/nmd-logo-square-white.png" alt="NMD square logo, white" width="480" height="362"><figcaption>Square · white</figcaption></figure>
+            <figure class="logo-tile logo-tile--dark"><img src="../assets/img/logo/nmd-logo-circle-white.png" alt="NMD circle logo, white" width="480" height="479"><figcaption>Circle · white, used centered over hero photos</figcaption></figure>
+          </div>
+          <ul class="rules">
+            <li><strong>Do</strong> use the square logo top left in headers; the circle centered over hero photos, on signage and as a social avatar.</li>
+            <li><strong>Do</strong> keep clear space around the logo of at least the height of the word MADISON, and keep it at least 64px (screen) or 0.75 in (print) tall.</li>
+            <li><strong>Don’t</strong> redraw, retype, recolor (other than black or white), stretch, crop, outline or add effects.</li>
+          </ul>
+          <p class="downloads"><span class="label">Downloads (transparent PNG)</span>
+            <a href="downloads/nmd-logo-square-black-transparent.png" download>Square, black</a>
+            <a href="downloads/nmd-logo-square-white-transparent.png" download>Square, white</a>
+            <a href="downloads/nmd-logo-circle-black-transparent.png" download>Circle, black</a>
+            <a href="downloads/nmd-logo-circle-white-transparent.png" download>Circle, white</a>
+          </p>
+        </div>
+      </div>
+      <div class="split block">
+        <div class="col-label"><span class="label">02 — Color</span></div>
+        <div class="col-body">
+          <p class="prose">Warm off-white, near-black and charcoal, with copper as the single restrained accent. Black stays the logo color. No reds or navy blues.</p>
+          <div class="swatches"><div class="swatch"><div class="chip" style="background:#F5F4F0"></div><p class="swatch-name">Off-white</p><p class="swatch-hex">#F5F4F0</p><p class="swatch-use">Page background</p></div><div class="swatch"><div class="chip" style="background:#1A1A1A"></div><p class="swatch-name">Ink</p><p class="swatch-hex">#1A1A1A</p><p class="swatch-use">Text and logo</p></div><div class="swatch"><div class="chip" style="background:#1E1E1E"></div><p class="swatch-name">Charcoal</p><p class="swatch-hex">#1E1E1E</p><p class="swatch-use">Map section, dark tiles</p></div><div class="swatch"><div class="chip" style="background:#141414"></div><p class="swatch-name">Footer</p><p class="swatch-hex">#141414</p><p class="swatch-use">Footer</p></div><div class="swatch"><div class="chip" style="background:#E6E3DB"></div><p class="swatch-name">Stone</p><p class="swatch-hex">#E6E3DB</p><p class="swatch-use">Light tiles, image wells</p></div><div class="swatch"><div class="chip" style="background:#DAD7CE"></div><p class="swatch-name">Rule</p><p class="swatch-hex">#DAD7CE</p><p class="swatch-use">Hairlines</p></div><div class="swatch"><div class="chip" style="background:#9A5527"></div><p class="swatch-name">Copper</p><p class="swatch-hex">#9A5527</p><p class="swatch-use">The one accent: a single tile, hovers</p></div><div class="swatch"><div class="chip" style="background:#D9A375"></div><p class="swatch-name">Copper Light</p><p class="swatch-hex">#D9A375</p><p class="swatch-use">Accent on dark</p></div></div>
+          <p class="note">Contrast: Ink on Off-white 16:1, Copper on Off-white 4.9:1, white on Charcoal 16:1 — all pass WCAG AA.</p>
+        </div>
+      </div>
+      <div class="split block">
+        <div class="col-label"><span class="label">03 — Type</span></div>
+        <div class="col-body">
+          <div class="type-spec">
+            <p class="label">Headlines and text · Hanken Grotesk</p>
+            <p class="spec-sans">Featured projects.</p>
+            <p class="spec-label">Small uppercase labels · letter-spaced 0.2em</p>
+            <p class="note">Headlines in Light (300), sentence case, short and declarative, ending with a period. Body text in Regular. Navigation and labels in small uppercase.</p>
+          </div>
+          <div class="type-spec">
+            <p class="label">Statement moments · Instrument Serif</p>
+            <p class="spec-serif">Second lives for old buildings.</p>
+            <p class="note">Used rarely: one large centered statement over a photo. Both fonts are free Google Fonts (SIL Open Font License), self-hosted in <code>assets/fonts</code>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="split block">
+        <div class="col-label"><span class="label">04 — Photography</span></div>
+        <div class="col-body prose"><p>Real NMD projects and their settings only: aerials, finished interiors, exteriors and honest before-and-after pairs. Full-bleed and unfiltered. Renderings are credited (“Rendering: Potter Lawson”).</p></div>
+      </div>
+      <div class="split block">
+        <div class="col-label"><span class="label">05 — Voice</span></div>
+        <div class="col-body prose"><p>Plain, specific and confident. Lead with facts: apartments, square feet, years, names. No superlatives. No construction costs, acquisition prices, financing, sale prices, valuations, rents or loan information.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER (same on every page) ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../assets/img/logo/nmd-logo-circle-white.png" alt="New Madison Development" width="160" height="160" loading="lazy">
+        <p>Madison, built forward. New housing and second lives for old buildings.</p>
+      </div>
+      <div class="footer-col">
+        <span class="label">Office</span>
+        <address>902 Williamson Street<br>Madison, WI 53703</address>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=902+Williamson+St+Madison+WI+53703" rel="noopener">Directions</a></p>
+      </div>
+      <div class="footer-col footer-col--contact">
+        <span class="label">Contact</span>
+        <ul>
+          <li>William Butcher</li>
+          <li><a href="mailto:william@newmadisondevelopment.com">william@newmadisondevelopment.com</a></li>
+          <li><a href="tel:+16083451296">608.345.1296</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="label">Explore</span>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../projects/index.html">Projects</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> New Madison Development</span>
+      <span>Madison, Wisconsin</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
