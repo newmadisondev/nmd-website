@@ -11,10 +11,10 @@ There are **no placeholders on the site**. Everything visible comes from `conten
 6. **Eric Welch's email** (eric@newmadisondevelopment.com) is public on About and Contact.
 
 ## Content that would make it better
-- **Finished-building photos** of Starkweather Place and Trader's Way. Both cards and the Trader's Way hero use renderings, which are low resolution (1400 px and 1200 px wide). Trader's Way's full-bleed hero will look soft on large screens until a real photo replaces it.
+- **Finished-building photos** of Starkweather Place and Trader's Way (exterior and amenity shots). Both cards and the Trader's Way hero use renderings, which are low resolution (1400 px and 1200 px wide). Trader's Way's full-bleed hero will look soft on large screens until a real photo replaces it.
 - **Higher-resolution Dickinson before/after photos** (current ones are 650 px wide each). With a large "after" photo, that page could get a full-bleed hero like the others.
 - **More Tinsmith and Northern Court photos** (exteriors, roofs).
-- **Partner portraits** and a short bio for Eric Welch.
+- **A photo of Eric** (about 700×875 px, portrait). Save it as `assets/img/people/eric-welch.jpg` and, in `about.html`, replace the `EW` tile with an `<img>` like William's. A one-line bio for Eric would help too.
 
 ## Before going live (not done, per instructions)
 - Turn on GitHub Pages (Settings → Pages → `main`, `/ (root)`) and connect newmadisondevelopment.com.

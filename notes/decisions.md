@@ -23,6 +23,9 @@ Each one is easy to change. Later instructions from William replaced earlier one
 - **Neighborhood lines** use what the content gives: East side, West side, E Main Street, Marquette, Off E Washington Ave.
 - **Stats:** "27,000 SF" is labeled "about", matching the content (9,000 + 6,158 + 12,000).
 - **Contact:** email and phone links, no form. Eric Welch shown with title and email.
+- **Partner portraits (About):** William's photo is the headshot from the Principal Madison About page, taken from his own document in Google Drive (998 E Main listing proposal, page 8, printed beside his name). No photo of Eric was found in Drive. A portrait taken from the internet could easily show a different Eric Welch, so his spot is a quiet "EW" tile in the same frame. Portraits show in black and white and turn to color on hover, so the two match.
+- **Trader's Way plans:** the site plan and a one-bedroom floor plan come from William's Trader's Way leasing brochure in Drive. The brochure outlined three available units in red. Only those outlines were recolored to neutral gray, since leasing callouts don't belong on the company site.
+- **Concise copy:** each project page says things once. Numbers sit in the tiles, dates in the timeline, and names and addresses in "At a glance". The overview is one or two short sentences.
 
 ## Map
 - **OpenStreetMap street map, as on the Principal Madison site** (William's request). It is shown with Leaflet, which is bundled in `assets/vendor/leaflet/` (BSD license), so it doesn't depend on a CDN. Standard OpenStreetMap tiles are toned to dark charcoal with a CSS filter, so the map matches the Haussmann-style dark map section. White numbered pins match the numbered list; hovering a list row lights its pin.

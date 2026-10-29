@@ -416,3 +416,27 @@ figcaption { font-size: .8125rem; color: var(--muted); margin-top: 10px; }
 .map-canvas.leaflet-container .leaflet-control-attribution { background: rgba(20,20,20,.75); color: var(--muted-dark); font-size: .6875rem; }
 .map-canvas.leaflet-container .leaflet-control-attribution a { color: #ddd; }
 .map-canvas .leaflet-bar a { background: #fff; color: var(--ink); border-bottom-color: var(--line); }
+
+/* ---------- Partner portraits (About) */
+.partners { max-width: 980px; }
+.partner-photo { margin-bottom: 24px; max-width: 420px; }
+.partner-photo img { filter: grayscale(1) contrast(1.04); transition: filter .8s var(--ease); }
+.partner:hover .partner-photo img { filter: none; }
+.partner-photo--mono { display: grid; place-items: center; background: #2A2A2A; }
+.partner-photo--mono span { font-family: var(--serif); font-size: clamp(4rem, 9vw, 7rem); color: #4A4A48; letter-spacing: .02em; }
+.partner .h3 { margin-top: 4px; }
+/* Plans and drawings: show the whole image on white rather than cropping */
+.frame--plan { background: #fff; }
+.frame--plan img { object-fit: contain; }
+.frame.frame--plan { aspect-ratio: auto; }
+.frame--plan img { height: auto; }
+
+/* Gallery columns (project pages) */
+.g-left { grid-column: 1 / span 6; }
+.g-right { grid-column: 7 / span 6; }
+.g-7 { grid-column: 1 / span 7; }
+.g-5 { grid-column: 8 / span 5; align-self: end; }
+@media (max-width: 820px) {
+  .g-left, .g-right, .g-7, .g-5 { grid-column: 1 / -1; }
+  .partner-photo { max-width: 260px; }
+}
