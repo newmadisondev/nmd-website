@@ -440,3 +440,16 @@ figcaption { font-size: .8125rem; color: var(--muted); margin-top: 10px; }
   .g-left, .g-right, .g-7, .g-5 { grid-column: 1 / -1; }
   .partner-photo { max-width: 260px; }
 }
+
+/* Numerals: the label comes first in the HTML (valid definition list) but shows under the number */
+.numerals div { display: flex; flex-direction: column-reverse; justify-content: flex-end; }
+/* Section titles are <h2 class="label"> */
+h2.label { margin: 0; line-height: 1.6; }
+
+/* Projects grid: three tall cards, then two wide ones, so five projects fill the grid */
+@media (min-width: 961px) {
+  .grid { grid-template-columns: repeat(6, 1fr); }
+  .grid > .card { grid-column: span 2; }
+  .grid > .card:nth-child(n+4) { grid-column: span 3; }
+  .grid > .card:nth-child(n+4) .frame--portrait { aspect-ratio: 3 / 2; }
+}
