@@ -1,0 +1,6 @@
+# GitHub Pages settings. Keeps working files and original full-size photos out of the published website.
+# (The site itself is plain HTML; nothing here changes how pages look.)
+exclude:
+  - content
+  - notes
+  - README.md
