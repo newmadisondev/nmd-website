@@ -38,7 +38,7 @@ PROJECTS = [
     dict(slug="traders-way", name="Trader’s Way", short="Trader’s Way",
          address="6624 Old Sauk Road, Madison", area="West side", kind="Multifamily, new construction",
          partner="NMD with Stone House Development", status="Completed", year="2026", units="144 apartments",
-         card_img="traders-way-rendering.jpg", hero_img="traders-way-rendering.jpg", framed=True, hero_cap="Rendering: Potter Lawson", lat=43.0830, lon=-89.5050,
+         card_img="tw-grills.jpg", hero_img="tw-grills.jpg", lat=43.0830, lon=-89.5050,
          lede="144 apartments on a four-acre former farmstead on the west side.",
          facts=["144 apartments in three stories on a four-acre former farmstead, put under contract in 2023.",
                 "Rezoning approved unanimously by the Plan Commission, then by the City Council.",
@@ -49,7 +49,11 @@ PROJECTS = [
                ("Apartments", "144"), ("Site", "About four acres"), ("Partner", "Stone House Development"),
                ("Architect", "Potter Lawson"), ("Builder", "Stevens Construction"), ("Opened", "September 15, 2026")],
          link=None,
-         gallery=[("traders-way-rendering.jpg", "Rendering: Potter Lawson", True)]),
+         gallery=[("tw-pool-building.jpg", "Pool and courtyard", False), ("tw-hot-tub.jpg", "Hot tub and pergola", False),
+                  ("tw-clubhouse-patio.jpg", "Clubhouse patio", False), ("tw-sauna.jpg", "Sauna", False),
+                  ("tw-sauna-interior.jpg", "Sauna", False), ("tw-clubroom.jpg", "Clubroom", False),
+                  ("tw-bar.jpg", "Clubroom bar", False), ("tw-fireplace.jpg", "Clubroom lounge", False),
+                  ("traders-way-rendering.jpg", "Rendering: Potter Lawson", True)]),
     dict(slug="the-tinsmith", name="The Tinsmith", short="The Tinsmith",
          address="828 E Main Street, Madison", area="East Main Street", kind="Adaptive reuse",
          partner="NMD project, William Butcher and Eric Welch", status="Completed", year="2020", units="About 9,000 SF",
@@ -208,7 +212,7 @@ def map_svg():
 
 # ---------- hero slideshow ----------
 HERO_SLIDES = [("starkweather-place", "starkweather-drone.jpg"), ("the-tinsmith", "tinsmith-exterior.jpg"),
-               ("traders-way", "traders-way-rendering.jpg"), ("northern-court", "state-line-lounge.jpg"),
+               ("traders-way", "tw-grills.jpg"), ("northern-court", "state-line-lounge.jpg"),
                ("the-tinsmith", "tinsmith-solarium.jpg"), ("210-s-dickinson", "dickinson-after-night.jpg"),
                ("northern-court", "state-line-patio-1413.jpg")]
 
