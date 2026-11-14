@@ -87,7 +87,7 @@ PROJECTS = [
          partner="NMD project", status="Completed", year="2020", units="6,158 SF",
          card_img="dickinson-after-night.jpg", card_hover="dickinson-after-deck.jpg", hero_img="dickinson-after-night.jpg", keep_gallery=True, lat=43.0869, lon=-89.3624, nudge=(-13, 10),
          lede="A 1967 ice house and window-cleaning shop, rebuilt as creative office for Stephan & Brady.",
-         facts=["A 1967 masonry building, built as an ice house and for decades the shop of Madison Window Cleaning.",
+         facts=["A 1967 metal building, built as an ice house and for decades the shop of Madison Window Cleaning.",
                 "Acquired in 2019.",
                 "Gutted and rebuilt as a 6,158 SF single-tenant creative office, build-to-suit for Stephan & Brady, the marketing agency, on a long-term lease. Delivered 2020.",
                 "Stephan & Brady remains the tenant."],
