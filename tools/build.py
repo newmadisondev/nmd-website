@@ -21,7 +21,7 @@ PROJECTS = [
     dict(slug="starkweather-place", name="Starkweather Place", short="Starkweather Place",
          address="215 N Fair Oaks Avenue, Madison", area="East side", kind="Multifamily, new construction",
          partner="NMD with Stone House Development", status="Completed", year="2024", units="112 apartments",
-         card_img="sw-courtyard.jpg", hero_img="sw-courtyard.jpg", slideshow=True, keep_gallery=True, lat=43.1019, lon=-89.3307,
+         card_img="sw-courtyard.jpg", card_hover="sw-entrance.jpg", hero_img="sw-courtyard.jpg", slideshow=True, keep_gallery=True, lat=43.1019, lon=-89.3307,
          lede="112 apartments on Starkweather Creek, with 2.5 acres of creek frontage.",
          facts=["112 apartments, four stories, on 4.33 acres.",
                 "Site put under contract in 2020 in the Town of Blooming Grove, annexed into Madison, rezoned November 2022.",
@@ -43,7 +43,7 @@ PROJECTS = [
     dict(slug="traders-way", name="Trader’s Way", short="Trader’s Way",
          address="6624 Old Sauk Road, Madison", area="West side", kind="Multifamily, new construction",
          partner="NMD with Stone House Development", status="Completed", year="2026", units="144 apartments",
-         card_img="tw-pool-building.jpg", hero_img="tw-street.jpg", slideshow=True, keep_gallery=True,
+         card_img="tw-pool-building.jpg", card_hover="tw-street.jpg", hero_img="tw-street.jpg", slideshow=True, keep_gallery=True,
          slide_order=["tw-street.jpg", "tw-pool-building.jpg", "tw-lobby.jpg", "tw-clubroom.jpg", "tw-bar.jpg", "tw-fireplace.jpg",
                       "tw-game-room.jpg", "tw-mail.jpg", "tw-coworking.jpg", "tw-conference.jpg", "tw-yoga.jpg", "tw-sauna-interior.jpg",
                       "tw-fire-pit.jpg", "tw-hot-tub.jpg", "tw-clubhouse-patio.jpg", "tw-sauna.jpg", "tw-grills.jpg"], lat=43.0753, lon=-89.4946,
@@ -69,7 +69,7 @@ PROJECTS = [
     dict(slug="the-tinsmith", name="The Tinsmith", short="The Tinsmith",
          address="828 E Main Street, Madison", area="East Main Street", kind="Adaptive reuse",
          partner="NMD project, William Butcher and Eric Welch", status="Completed", year="2020", units="About 9,000 SF",
-         card_img="tinsmith-exterior.jpg", hero_img="tinsmith-exterior.jpg", slideshow=True, keep_gallery=True, lat=43.0812, lon=-89.3733,
+         card_img="tinsmith-exterior.jpg", card_hover="tinsmith-solarium.jpg", hero_img="tinsmith-exterior.jpg", slideshow=True, keep_gallery=True, lat=43.0812, lon=-89.3733,
          lede="Two Trachte steel warehouses, kept instead of demolished, now a wedding and event venue.",
          facts=["Two joined Trachte steel warehouses, about 9,000 SF under barrel-vaulted roofs. Trachte was the Madison company that patented the prefabricated steel building.",
                 "Acquired in 2018 after a seven-year pursuit.",
@@ -85,7 +85,7 @@ PROJECTS = [
     dict(slug="210-s-dickinson", name="210 S Dickinson", short="210 S Dickinson",
          address="210 S Dickinson Street, Madison", area="Marquette neighborhood", kind="Adaptive reuse, build-to-suit office",
          partner="NMD project", status="Completed", year="2020", units="6,158 SF",
-         card_img="dickinson-after-night.jpg", hero_img="dickinson-after-night.jpg", keep_gallery=True, lat=43.0869, lon=-89.3624, nudge=(-13, 10),
+         card_img="dickinson-after-night.jpg", card_hover="dickinson-after-deck.jpg", hero_img="dickinson-after-night.jpg", keep_gallery=True, lat=43.0869, lon=-89.3624, nudge=(-13, 10),
          lede="A 1967 ice house and window-cleaning shop, rebuilt as creative office for Stephan & Brady.",
          facts=["A 1967 masonry building, built as an ice house and for decades the shop of Madison Window Cleaning.",
                 "Acquired in 2019.",
@@ -100,7 +100,7 @@ PROJECTS = [
     dict(slug="northern-court", name="Northern Court", short="Northern Court",
          address="1401 and 1413 Northern Court, Madison", area="1 block off Williamson St", kind="Industrial reuse",
          partner="NMD project, William Butcher and Eric Welch", status="Completed", year="2017", units="About 12,000 SF",
-         card_img="state-line-lounge.jpg", hero_img="state-line-patio-1413.jpg", lat=43.0875, lon=-89.3622, nudge=(13, -10),
+         card_img="state-line-lounge.jpg", card_hover="state-line-patio-1413.jpg", hero_img="state-line-patio-1413.jpg", lat=43.0875, lon=-89.3622, nudge=(13, -10),
          lede="Two industrial buildings that turned a short street into one of Madison’s craft-beverage blocks.",
          facts=["Two industrial buildings, about 12,000 SF of leasable space, converted in 2016–2017.",
                 "Tenants: State Line Distillery (opened 2017); Imaginary Factory, a liqueur and bitters maker with a cocktail bar (about 2,500 SF; its founder was a 2026 James Beard Award finalist); Creative Energy Designs (about 3,600 SF).",
@@ -239,7 +239,7 @@ def slides():
 # ---------- pages ----------
 def index():
     cards = "".join(f"""<a class="card" href="projects/{p['slug']}.html">
-<div class="ph"><img src="img/{p['card_img']}"{srcset(p['card_img']).replace('sizes="100vw"','sizes="(max-width:1100px) 80vw, 20vw"')} alt="{e(p['name'])}" loading="lazy"><span class="num">{i:02d}</span></div>
+<div class="ph"><img src="img/{p['card_img']}"{srcset(p['card_img']).replace('sizes="100vw"','sizes="(max-width:1100px) 80vw, 20vw"')} alt="{e(p['name'])}" loading="lazy"><img class="alt" src="img/{p['card_hover']}" alt="" loading="lazy"><span class="num">{i:02d}</span></div>
 <h3>{e(p['name'])}</h3>
 <div class="meta">{e(p['area'])}<br>{e(p['units'])} · {e(p['year'])}</div>
 <span class="go">View project</span></a>""" for i, p in enumerate(PROJECTS, 1))
