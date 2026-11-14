@@ -65,6 +65,7 @@ PROJECTS = [
          link=None,
          gallery=[("tinsmith-before.jpg", "Before: the Kleenaire Corp. building", False), ("tinsmith-exterior.jpg", "After: East Main Street", False),
                   ("tinsmith-main-hall.jpg", "The main hall. Photo: Anya Kubilus Photography", False), ("tinsmith-evening.jpg", "The solarium in the evening", False),
+                  ("tinsmith-tables.jpg", "Reception in the main hall. Photo: Anya Kubilus Photography", False),
                   ("tinsmith-solarium.jpg", "The solarium courtyard", True)]),
     dict(slug="210-s-dickinson", name="210 S Dickinson", short="210 S Dickinson",
          address="210 S Dickinson Street, Madison", area="Marquette neighborhood", kind="Adaptive reuse, build-to-suit office",
