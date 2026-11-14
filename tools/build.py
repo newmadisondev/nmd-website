@@ -57,8 +57,9 @@ PROJECTS = [
          lede="Two Trachte steel warehouses, kept instead of demolished, now a wedding and event venue.",
          facts=["Two joined Trachte steel warehouses, about 9,000 SF under barrel-vaulted roofs. Trachte was the Madison company that patented the prefabricated steel building.",
                 "Acquired in 2018 after a seven-year pursuit.",
-                "Converted, instead of demolished, into The Tinsmith, a wedding and event venue with a glass solarium courtyard. Opened 2020.",
-                "Adaptive Reuse Project of the Year 2021, Madison Trust for Historic Preservation. Voted best venue in Wisconsin by Wisconsin Bride, four years running."],
+                "Converted, instead of demolished, into The Tinsmith, a wedding and event venue with a glass solarium courtyard. Opened 2020."],
+         recog=[("Adaptive Reuse Project of the Year 2021", "Madison Trust for Historic Preservation"),
+                ("Best venue in Wisconsin, four years running", "Wisconsin Bride")],
          rows=[("Address", "828 E Main Street, Madison"), ("Type", "Adaptive reuse"), ("Size", "About 9,000 SF"),
                ("Acquired", "2018"), ("Opened", "2020"), ("Partners", "William Butcher and Eric Welch")],
          link=None,
@@ -224,7 +225,6 @@ def index():
     key = "".join(f"""<li><a href="projects/{p['slug']}.html" data-n="{i}"><span class="n">{i:02d}</span><span><b>{e(p['name'])}</b><small>{e(p['area'])} · {e(p['units'])} · {e(p['status'])}</small></span></a></li>"""
                   for i, p in enumerate(PROJECTS, 1))
     stats = "".join(f'<div class="stat"><b>{e(n)}</b><span>{e(l)}</span></div>' for n, l in STATS)
-    recog = "".join(f"<li><b>{e(a)}</b><span>{e(b)}</span></li>" for a, b in RECOGNITION)
     people = "".join(f'<div class="person"><b>{e(n)}</b><span>{e(r)}</span>{f"<p>{t}</p>" if t else ""}</div>' for n, r, t in PEOPLE)
     return (head("New Madison Development", "Madison, Wisconsin development company led by William Butcher and Eric Welch. New housing and new uses for older industrial buildings.")
             + header() + f"""<main>
@@ -257,11 +257,6 @@ def index():
 </div>
 </div></section>
 
-<section class="recog"><div class="wrap"><div class="recog-grid">
-<div><p class="eyebrow">Recognition</p><h2 class="h-2">The Tinsmith.</h2></div>
-<ul>{recog}</ul>
-</div></div></section>
-
 <section class="people" id="people"><div class="wrap">
 <p class="eyebrow">People</p><h2 class="h-section">Partners.</h2>
 <div class="people-grid">{people}</div>
@@ -289,6 +284,15 @@ function set(n,on){{pins.forEach(function(p){{p.classList.toggle('active',on&&p.
 </script>
 """ + footer())
 
+def recog_block(p):
+    if not p.get("recog"):
+        return ""
+    items = "".join(f"<li><b>{e(a)}</b><span>{e(b)}</span></li>" for a, b in p["recog"])
+    return f"""<section class="recog"><div class="wrap"><div class="recog-grid">
+<div><p class="eyebrow">Recognition</p><h2 class="h-2">Awards.</h2></div>
+<ul>{items}</ul>
+</div></div></section>"""
+
 def project_page(i, p):
     nxt = PROJECTS[(i + 1) % len(PROJECTS)]
     rows = "".join(f"<div><dt>{e(a)}</dt><dd>{e(b)}</dd></div>" for a, b in p["rows"])
@@ -313,6 +317,7 @@ def project_page(i, p):
 <dl class="p-facts">{rows}</dl>
 <div class="p-text"><p class="eyebrow">{e(p['partner'])}</p><p class="lede" style="margin-top:14px">{e(p['lede'])}</p><ul>{facts}</ul></div>
 </div></div></section>
+{recog_block(p)}
 {f'<section><div class="wrap"><div class="gallery">{gal}</div></div></section>' if gal else '<div style="height:clamp(24px,4vw,60px)"></div>'}
 <section class="next"><div class="wrap"><a href="{nxt['slug']}.html"><span>Next project</span><b>{e(nxt['name'])}</b></a></div></section>
 </main>
