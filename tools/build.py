@@ -11,7 +11,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,300&family=Hanken+Grotesk:wght@200;300;400;500&family=IBM+Plex+Mono:wght@400;600&display=swap">')
 
-COMPANY = ("New Madison Development (NMD) is a Madison, Wisconsin development company led by partners "
+COMPANY = ("New Madison Development is a Madison, Wisconsin development company led by partners "
            "William Butcher and Eric Welch. NMD builds new housing and gives older industrial buildings new uses. "
            "On its two apartment projects NMD is joint venture partner with Stone House Development.")
 
