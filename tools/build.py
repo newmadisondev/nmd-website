@@ -96,6 +96,9 @@ PROJECTS = [
                ("Partners", "William Butcher and Eric Welch")],
          link=None,
          gallery=[("northern-court-patio.jpg", "State Line Distillery patio", False),
+                  ("state-line-lounge.jpg", "State Line Distillery cocktail lounge", False),
+                  ("state-line-patio-1413.jpg", "State Line Distillery, 1413 Northern Court", False),
+                  ("state-line-bar.jpg", "State Line Distillery", True),
                   ("northern-court-interior.jpg", "Imaginary Factory", False),
                   ("northern-court-imaginary-factory-2.jpg", "Imaginary Factory", False)]),
 ]
