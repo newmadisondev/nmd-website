@@ -15,8 +15,7 @@ COMPANY = ("New Madison Development (NMD) is a Madison, Wisconsin development co
            "William Butcher and Eric Welch. NMD builds new housing and gives older industrial buildings new uses. "
            "On its two apartment projects NMD is joint venture partner with Stone House Development.")
 
-STATS = [("5", "projects"), ("256", "new apartments"), ("27,000", "square feet of industrial buildings reused (about)"),
-         ("2", "joint ventures with Stone House Development")]
+STATS = [("5", "projects"), ("256", "new apartments"), ("27,000", "square feet of industrial buildings reused (about)")]
 
 # lat/lon are approximate, for a schematic map only
 PROJECTS = [
@@ -60,7 +59,7 @@ PROJECTS = [
          facts=["Two joined Trachte steel warehouses, about 9,000 SF under barrel-vaulted roofs. Trachte was the Madison company that patented the prefabricated steel building.",
                 "Acquired in 2018 after a seven-year pursuit.",
                 "Converted, instead of demolished, into The Tinsmith, a wedding and event venue with a glass solarium courtyard. Opened 2020.",
-                "Adaptive Reuse Project of the Year 2021, Madison Trust for Historic Preservation. Voted best venue by Wisconsin Bride four years running."],
+                "Adaptive Reuse Project of the Year 2021, Madison Trust for Historic Preservation. Voted best venue in Wisconsin by Wisconsin Bride, four years running."],
          rows=[("Address", "828 E Main Street, Madison"), ("Type", "Adaptive reuse"), ("Size", "About 9,000 SF"),
                ("Acquired", "2018"), ("Opened", "2020"), ("Partners", "William Butcher and Eric Welch")],
          link=None,
@@ -81,7 +80,7 @@ PROJECTS = [
          gallery=[("dickinson-before-1.jpg", "Before, Dewey Court side", False), ("dickinson-after-1.jpg", "After, Dewey Court side", False),
                   ("dickinson-before-2.jpg", "Before", False), ("dickinson-after-2.jpg", "After", False)]),
     dict(slug="northern-court", name="Northern Court", short="Northern Court",
-         address="1401 and 1413 Northern Court, Madison", area="Off East Washington Avenue", kind="Industrial reuse",
+         address="1401 and 1413 Northern Court, Madison", area="1 block off Williamson St", kind="Industrial reuse",
          partner="NMD project, William Butcher and Eric Welch", status="Completed", year="2017", units="About 12,000 SF",
          card_img="northern-court-patio.jpg", hero_img="northern-court-patio.jpg", lat=43.0905, lon=-89.3575,
          lede="Two industrial buildings that turned a short street into one of Madison’s craft-beverage blocks.",
@@ -98,10 +97,10 @@ PROJECTS = [
 ]
 
 RECOGNITION = [("Adaptive Reuse Project of the Year 2021", "The Tinsmith · Madison Trust for Historic Preservation"),
-               ("Best venue, four years running", "The Tinsmith · Wisconsin Bride")]
+               ("Best venue in Wisconsin, four years running", "The Tinsmith · Wisconsin Bride")]
 
-PEOPLE = [("William Butcher", "Partner", "More than 24 years in Madison commercial real estate."),
-          ("Eric Welch", "Partner", ""),
+PEOPLE = [("William Butcher", "Owner", '25+ years in Madison commercial real estate, development, and brokerage. Owner <a href="https://principalmadison.com" target="_blank" rel="noopener">Principal Madison</a>'),
+          ("Eric Welch", "Owner", "20+ years investing, building, and developing in Madison."),
           ("Stone House Development", "Joint venture partner", "Starkweather Place and Trader’s Way.")]
 
 e = html.escape
@@ -200,7 +199,6 @@ def map_svg():
 <path class="cap-mark" d="M{cx},{cy - 9} L{cx + 9},{cy} L{cx},{cy + 9} L{cx - 9},{cy} Z"/>
 <text class="cap-label" x="{cx - 14}" y="{cy + 28}" text-anchor="end">CAPITOL</text>
 {''.join(pins)}
-<text class="note" x="{W - 10}" y="{H - 12}" text-anchor="end">SCHEMATIC · NOT TO SCALE</text>
 </svg>"""
 
 # ---------- pages ----------
@@ -214,13 +212,13 @@ def index():
                   for i, p in enumerate(PROJECTS, 1))
     stats = "".join(f'<div class="stat"><b>{e(n)}</b><span>{e(l)}</span></div>' for n, l in STATS)
     recog = "".join(f"<li><b>{e(a)}</b><span>{e(b)}</span></li>" for a, b in RECOGNITION)
-    people = "".join(f'<div class="person"><b>{e(n)}</b><span>{e(r)}</span>{f"<p>{e(t)}</p>" if t else ""}</div>' for n, r, t in PEOPLE)
+    people = "".join(f'<div class="person"><b>{e(n)}</b><span>{e(r)}</span>{f"<p>{t}</p>" if t else ""}</div>' for n, r, t in PEOPLE)
     return (head("New Madison Development", "Madison, Wisconsin development company led by William Butcher and Eric Welch. New housing and new uses for older industrial buildings.")
             + header() + f"""<main>
 <section class="hero">
 <img src="img/starkweather-drone.jpg"{srcset("starkweather-drone.jpg")} alt="Aerial view of Starkweather Creek beside Starkweather Place" fetchpriority="high">
 <div class="wrap">
-<h1>New housing. <em>Second lives</em> for old buildings.</h1>
+<h1>Ground Up. <em>Adaptive Reuse.</em></h1>
 <div class="cap"><span>Madison, Wisconsin</span><span>Starkweather Creek, Starkweather Place</span></div>
 </div>
 </section>
@@ -234,7 +232,7 @@ def index():
 
 <section class="projects" id="projects"><div class="wrap">
 <div class="projects-head"><div><p class="eyebrow">Completed work</p><h2 class="h-section">Projects.</h2></div>
-<p>Two apartment communities with Stone House Development, and three older industrial buildings put back to work.</p></div>
+<p>Two apartment communities with Stone House Development, and three historic industrial buildings reinvented as office and hospitality spaces.</p></div>
 <div class="cards">{cards}</div>
 </div></section>
 
@@ -259,10 +257,10 @@ def index():
 <section class="contact" id="contact"><div class="wrap"><div class="contact-grid">
 <div><p class="eyebrow">Contact</p><h2 class="h-section">Talk to us.</h2></div>
 <dl>
-<dt>William</dt><dd>William Butcher, Partner</dd>
+<dt>William</dt><dd>William Butcher, Owner</dd>
 <dt>Phone</dt><dd><a href="tel:+16083451296">608.345.1296</a></dd>
 <dt>Email</dt><dd><a href="mailto:william@newmadisondevelopment.com">william@newmadisondevelopment.com</a></dd>
-<dt>Eric</dt><dd>Eric Welch, Partner · <a href="mailto:eric@newmadisondevelopment.com">eric@newmadisondevelopment.com</a></dd>
+<dt>Eric</dt><dd>Eric Welch, Owner · <a href="mailto:eric@newmadisondevelopment.com">eric@newmadisondevelopment.com</a></dd>
 <dt>Office</dt><dd>902 Williamson Street<br>Madison, WI 53703</dd>
 </dl>
 </div></div></section>
