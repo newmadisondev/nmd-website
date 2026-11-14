@@ -216,8 +216,9 @@ def map_svg():
 
 # ---------- hero slideshow ----------
 HERO_SLIDES = [("starkweather-place", "starkweather-drone.jpg"), ("the-tinsmith", "tinsmith-exterior.jpg"),
-               ("traders-way", "tw-grills.jpg"), ("northern-court", "state-line-lounge.jpg"),
-               ("the-tinsmith", "tinsmith-solarium.jpg"), ("210-s-dickinson", "dickinson-after-night.jpg"),
+               ("traders-way", "tw-street.jpg"), ("northern-court", "state-line-lounge.jpg"),
+               ("the-tinsmith", "tinsmith-solarium.jpg"), ("traders-way", "tw-pool-building.jpg"),
+               ("210-s-dickinson", "dickinson-after-night.jpg"), ("traders-way", "tw-bar.jpg"),
                ("northern-court", "state-line-patio-1413.jpg")]
 
 def slides():
