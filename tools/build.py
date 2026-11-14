@@ -21,7 +21,7 @@ PROJECTS = [
     dict(slug="starkweather-place", name="Starkweather Place", short="Starkweather Place",
          address="215 N Fair Oaks Avenue, Madison", area="East side", kind="Multifamily, new construction",
          partner="NMD with Stone House Development", status="Completed", year="2024", units="112 apartments",
-         card_img="sw-courtyard.jpg", hero_img="starkweather-drone.jpg", lat=43.0995, lon=-89.3410,
+         card_img="sw-courtyard.jpg", hero_img="sw-courtyard.jpg", lat=43.0995, lon=-89.3410,
          lede="112 apartments on Starkweather Creek, with 2.5 acres of restored creek frontage.",
          facts=["112 apartments, four stories, on 4.33 acres.",
                 "Site put under contract in 2020 in the Town of Blooming Grove, annexed into Madison, rezoned November 2022.",
