@@ -275,7 +275,7 @@ def index():
 </div></section>
 
 <section class="night" id="map"><div class="wrap">
-<p class="eyebrow">Where</p><h2 class="h-section">Across Madison.</h2>
+<h2 class="h-section">Madison.</h2>
 <div class="night-grid">
 <div>{map_svg()}</div>
 <ol class="key">{key}</ol>
