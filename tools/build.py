@@ -93,7 +93,8 @@ PROJECTS = [
                ("Partners", "William Butcher and Eric Welch")],
          link=None,
          gallery=[("northern-court-patio.jpg", "State Line Distillery patio", False),
-                  ("northern-court-interior.jpg", "Imaginary Factory", False)]),
+                  ("northern-court-interior.jpg", "Imaginary Factory", False),
+                  ("northern-court-imaginary-factory-2.jpg", "Imaginary Factory", False)]),
 ]
 
 RECOGNITION = [("Adaptive Reuse Project of the Year 2021", "The Tinsmith · Madison Trust for Historic Preservation"),
