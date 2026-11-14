@@ -132,7 +132,7 @@ def srcset(img, up=""):
         return f' srcset="{up}img/{stem}-1000.jpg 1000w, {up}img/{img} 2000w" sizes="100vw"'
     return ""
 
-def head(title, desc, depth=0):
+def head(title, desc, depth=0, share="share-home.jpg"):
     up = "../" * depth
     return f"""<!doctype html>
 <html lang="en">
@@ -143,7 +143,9 @@ def head(title, desc, depth=0):
 <meta name="description" content="{e(desc)}">
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
-<meta property="og:image" content="https://newmadisondev.github.io/nmd-website/img/share.jpg">
+<meta property="og:image" content="https://newmadisondev.github.io/nmd-website/img/{share}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{up}img/nmd-logo-circle-ink.png">
 {FONTS}
@@ -340,7 +342,7 @@ def project_page(i, p):
 {pics}
 <div class="wrap"><p class="eyebrow">{eyebrow}</p><h1>{e(p['name'])}</h1></div>
 </section>"""
-    return (head(f"{p['name']} · New Madison Development", p["lede"], 1) + header(1, bool(p.get("framed"))) + f"""<main>
+    return (head(f"{p['name']} · New Madison Development", p["lede"], 1, f"share-{p['slug']}.jpg") + header(1, bool(p.get("framed"))) + f"""<main>
 {top}
 <section class="p-body"><div class="wrap"><div class="p-grid">
 <dl class="p-facts">{rows}</dl>
