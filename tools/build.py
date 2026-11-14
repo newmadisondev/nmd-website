@@ -48,7 +48,7 @@ PROJECTS = [
                       "tw-game-room.jpg", "tw-mail.jpg", "tw-coworking.jpg", "tw-conference.jpg", "tw-yoga.jpg", "tw-sauna-interior.jpg",
                       "tw-fire-pit.jpg", "tw-hot-tub.jpg", "tw-clubhouse-patio.jpg", "tw-sauna.jpg", "tw-grills.jpg"], lat=43.0753, lon=-89.4946,
          lede="144 apartments on a four-acre wooded site; a vestigial portion of an original land grant farm on the near west side.",
-         facts=["144 apartments in three stories on a four-acre former farmstead, put under contract in 2023.",
+         facts=["144 apartments in three stories on a four-acre site.",
                 "Outdoor pool, hot tub, sauna, coworking space, green roofs, underground parking with EV charging.",
                 "Designed by Potter Lawson. Built by Stevens Construction.",
                 "Opened September 15, 2026."],
