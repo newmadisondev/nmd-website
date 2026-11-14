@@ -20,10 +20,14 @@
 </div></header>
 <main>
 <section class="hero">
-<img src="img/starkweather-drone.jpg" srcset="img/starkweather-drone-1000.jpg 1000w, img/starkweather-drone.jpg 2000w" sizes="100vw" alt="Aerial view of Starkweather Creek beside Starkweather Place" fetchpriority="high">
+<img class="slide on" src="img/starkweather-drone.jpg" srcset="img/starkweather-drone-1000.jpg 1000w, img/starkweather-drone.jpg 2000w" sizes="100vw" alt="Starkweather Place" data-name="Starkweather Place" data-href="projects/starkweather-place.html" fetchpriority="high">
+<img class="slide" src="img/traders-way-rendering.jpg" alt="Trader’s Way" data-name="Trader’s Way" data-href="projects/traders-way.html" loading="lazy">
+<img class="slide" src="img/tinsmith-solarium.jpg" srcset="img/tinsmith-solarium-1000.jpg 1000w, img/tinsmith-solarium.jpg 2000w" sizes="100vw" alt="The Tinsmith" data-name="The Tinsmith" data-href="projects/the-tinsmith.html" loading="lazy">
+<img class="slide" src="img/dickinson-after-2.jpg" alt="210 S Dickinson" data-name="210 S Dickinson" data-href="projects/210-s-dickinson.html" loading="lazy">
+<img class="slide" src="img/northern-court-patio.jpg" srcset="img/northern-court-patio-1000.jpg 1000w, img/northern-court-patio.jpg 2000w" sizes="100vw" alt="Northern Court" data-name="Northern Court" data-href="projects/northern-court.html" loading="lazy">
 <div class="wrap">
 <h1>Ground Up. <em>Adaptive Reuse.</em></h1>
-<div class="cap"><span>Madison, Wisconsin</span><span>Starkweather Creek, Starkweather Place</span></div>
+<div class="cap"><span>Madison, Wisconsin</span><a class="slide-cap" href="projects/starkweather-place.html">Starkweather Place</a></div>
 </div>
 </section>
 
@@ -101,6 +105,9 @@
 </div></div></section>
 </main>
 <script>
+(function(){var s=document.querySelectorAll('.hero .slide'),c=document.querySelector('.slide-cap'),i=0;
+if(s.length<2||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+setInterval(function(){s[i].classList.remove('on');i=(i+1)%s.length;s[i].classList.add('on');c.textContent=s[i].dataset.name;c.href=s[i].dataset.href},5500);})();
 (function(){var pins=document.querySelectorAll('.map .pin'),keys=document.querySelectorAll('.key a');
 function set(n,on){pins.forEach(function(p){p.classList.toggle('active',on&&p.dataset.n==n)});keys.forEach(function(k){k.classList.toggle('active',on&&k.dataset.n==n)})}
 [].forEach.call(pins,function(el){el.addEventListener('mouseenter',function(){set(el.dataset.n,true)});el.addEventListener('mouseleave',function(){set(0,false)})});

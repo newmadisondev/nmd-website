@@ -201,6 +201,20 @@ def map_svg():
 {''.join(pins)}
 </svg>"""
 
+# ---------- hero slideshow ----------
+HERO_SLIDES = {"starkweather-place": "starkweather-drone.jpg", "traders-way": "traders-way-rendering.jpg",
+               "the-tinsmith": "tinsmith-solarium.jpg", "210-s-dickinson": "dickinson-after-2.jpg",
+               "northern-court": "northern-court-patio.jpg"}
+
+def slides():
+    out = []
+    for i, p in enumerate(PROJECTS):
+        img = HERO_SLIDES[p["slug"]]
+        extra = ' fetchpriority="high"' if i == 0 else ' loading="lazy"'
+        out.append(f'<img class="slide{" on" if i == 0 else ""}" src="img/{img}"{srcset(img)} alt="{e(p["name"])}" '
+                   f'data-name="{e(p["name"])}" data-href="projects/{p["slug"]}.html"{extra}>')
+    return "\n".join(out)
+
 # ---------- pages ----------
 def index():
     cards = "".join(f"""<a class="card" href="projects/{p['slug']}.html">
@@ -216,10 +230,10 @@ def index():
     return (head("New Madison Development", "Madison, Wisconsin development company led by William Butcher and Eric Welch. New housing and new uses for older industrial buildings.")
             + header() + f"""<main>
 <section class="hero">
-<img src="img/starkweather-drone.jpg"{srcset("starkweather-drone.jpg")} alt="Aerial view of Starkweather Creek beside Starkweather Place" fetchpriority="high">
+{slides()}
 <div class="wrap">
 <h1>Ground Up. <em>Adaptive Reuse.</em></h1>
-<div class="cap"><span>Madison, Wisconsin</span><span>Starkweather Creek, Starkweather Place</span></div>
+<div class="cap"><span>Madison, Wisconsin</span><a class="slide-cap" href="projects/{PROJECTS[0]['slug']}.html">{e(PROJECTS[0]['name'])}</a></div>
 </div>
 </section>
 
@@ -266,6 +280,9 @@ def index():
 </div></div></section>
 </main>
 <script>
+(function(){{var s=document.querySelectorAll('.hero .slide'),c=document.querySelector('.slide-cap'),i=0;
+if(s.length<2||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+setInterval(function(){{s[i].classList.remove('on');i=(i+1)%s.length;s[i].classList.add('on');c.textContent=s[i].dataset.name;c.href=s[i].dataset.href}},5500);}})();
 (function(){{var pins=document.querySelectorAll('.map .pin'),keys=document.querySelectorAll('.key a');
 function set(n,on){{pins.forEach(function(p){{p.classList.toggle('active',on&&p.dataset.n==n)}});keys.forEach(function(k){{k.classList.toggle('active',on&&k.dataset.n==n)}})}}
 [].forEach.call(pins,function(el){{el.addEventListener('mouseenter',function(){{set(el.dataset.n,true)}});el.addEventListener('mouseleave',function(){{set(0,false)}})}});

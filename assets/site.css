@@ -51,6 +51,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--patina);outline-off
 /* hero */
 .hero{position:relative;min-height:min(88vh,860px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#2a3328}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero>img.slide{opacity:0;transition:opacity 1.6s ease}
+.hero>img.slide.on{opacity:1}
+.hero .slide-cap{color:inherit;text-decoration:none}
+.hero .slide-cap:hover{text-decoration:underline;text-underline-offset:4px}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,11,.45) 0%,rgba(10,12,11,0) 26%,rgba(10,12,11,.08) 40%,rgba(10,12,11,.72) 100%)}
 .hero h1{text-shadow:0 2px 30px rgba(0,0,0,.25)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-block:0 56px}
