@@ -258,7 +258,7 @@ def index():
 <div><p class="eyebrow">Contact</p><h2 class="h-section">Talk to us.</h2></div>
 <dl>
 <dt>William</dt><dd>William Butcher, Owner</dd>
-<dt>Phone</dt><dd><a href="tel:+16083451296">608.345.1296</a></dd>
+<dt>Phone</dt><dd><a href="tel:+16083015008">608.301.5008</a></dd>
 <dt>Email</dt><dd><a href="mailto:william@newmadisondevelopment.com">william@newmadisondevelopment.com</a></dd>
 <dt>Eric</dt><dd>Eric Welch, Owner · <a href="mailto:eric@newmadisondevelopment.com">eric@newmadisondevelopment.com</a></dd>
 <dt>Office</dt><dd>902 Williamson Street<br>Madison, WI 53703</dd>
