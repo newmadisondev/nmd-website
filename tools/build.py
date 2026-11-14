@@ -85,7 +85,7 @@ PROJECTS = [
     dict(slug="northern-court", name="Northern Court", short="Northern Court",
          address="1401 and 1413 Northern Court, Madison", area="1 block off Williamson St", kind="Industrial reuse",
          partner="NMD project, William Butcher and Eric Welch", status="Completed", year="2017", units="About 12,000 SF",
-         card_img="northern-court-patio.jpg", hero_img="northern-court-patio.jpg", lat=43.0905, lon=-89.3575,
+         card_img="state-line-patio-1413.jpg", hero_img="state-line-patio-1413.jpg", lat=43.0905, lon=-89.3575,
          lede="Two industrial buildings that turned a short street into one of Madison’s craft-beverage blocks.",
          facts=["Two industrial buildings, about 12,000 SF of leasable space, converted in 2016–2017.",
                 "Tenants: State Line Distillery (opened 2017); Imaginary Factory, a liqueur and bitters maker with a cocktail bar (about 2,500 SF; its founder was a 2026 James Beard Award finalist); Creative Energy Designs (about 3,600 SF).",
@@ -95,10 +95,8 @@ PROJECTS = [
                ("Tenants", "State Line Distillery, Imaginary Factory, Creative Energy Designs"),
                ("Partners", "William Butcher and Eric Welch")],
          link=None,
-         gallery=[("northern-court-patio.jpg", "State Line Distillery patio", False),
-                  ("state-line-lounge.jpg", "State Line Distillery cocktail lounge", False),
-                  ("state-line-patio-1413.jpg", "State Line Distillery, 1413 Northern Court", False),
-                  ("state-line-bar.jpg", "State Line Distillery", True),
+         gallery=[("state-line-lounge.jpg", "State Line Distillery cocktail lounge", False),
+                  ("state-line-bar.jpg", "State Line Distillery", False),
                   ("northern-court-interior.jpg", "Imaginary Factory", False),
                   ("northern-court-imaginary-factory-2.jpg", "Imaginary Factory", False)]),
 ]
@@ -111,7 +109,7 @@ PEOPLE = [("William Butcher", "Owner", '25+ years in Madison commercial real est
           ("Stone House Development", "Joint venture partner", "Starkweather Place and Trader’s Way.")]
 
 e = html.escape
-BIG = {"starkweather-drone.jpg", "starkweather-creek.jpg", "tinsmith-solarium.jpg", "northern-court-patio.jpg"}
+BIG = {"starkweather-drone.jpg", "starkweather-creek.jpg", "tinsmith-solarium.jpg"}
 def srcset(img, up=""):
     if img in BIG:
         stem = img[:-4]
@@ -212,7 +210,7 @@ def map_svg():
 HERO_SLIDES = [("starkweather-place", "starkweather-drone.jpg"), ("the-tinsmith", "tinsmith-exterior.jpg"),
                ("traders-way", "traders-way-rendering.jpg"), ("northern-court", "state-line-lounge.jpg"),
                ("the-tinsmith", "tinsmith-solarium.jpg"), ("210-s-dickinson", "dickinson-after-night.jpg"),
-               ("northern-court", "northern-court-patio.jpg")]
+               ("northern-court", "state-line-patio-1413.jpg")]
 
 def slides():
     by = {p["slug"]: p for p in PROJECTS}
