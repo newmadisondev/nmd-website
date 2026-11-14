@@ -49,7 +49,6 @@ PROJECTS = [
                       "tw-fire-pit.jpg", "tw-hot-tub.jpg", "tw-clubhouse-patio.jpg", "tw-sauna.jpg", "tw-grills.jpg"], lat=43.0753, lon=-89.4946,
          lede="144 apartments on a four-acre former farmstead on the west side.",
          facts=["144 apartments in three stories on a four-acre former farmstead, put under contract in 2023.",
-                "Rezoning approved unanimously by the Plan Commission, then by the City Council.",
                 "Outdoor pool, hot tub, sauna, coworking space, green roofs, underground parking with EV charging.",
                 "Designed by Potter Lawson. Built by Stevens Construction.",
                 "Opened September 15, 2026."],
