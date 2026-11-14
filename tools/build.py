@@ -258,17 +258,17 @@ def index():
 </div></section>
 
 <section class="people" id="people"><div class="wrap">
-<p class="eyebrow">People</p><h2 class="h-section">Partners.</h2>
+<h2 class="h-section">Partners.</h2>
 <div class="people-grid">{people}</div>
 </div></section>
 
 <section class="contact" id="contact"><div class="wrap"><div class="contact-grid">
 <div><p class="eyebrow">Contact</p><h2 class="h-section">Talk to us.</h2></div>
 <dl>
-<dt>William</dt><dd>William Butcher, Owner</dd>
+<dt>William</dt><dd>William Butcher</dd>
 <dt>Phone</dt><dd><a href="tel:+16083015008">608.301.5008</a></dd>
 <dt>Email</dt><dd><a href="mailto:william@newmadisondevelopment.com">william@newmadisondevelopment.com</a></dd>
-<dt>Eric</dt><dd>Eric Welch, Owner · <a href="mailto:eric@newmadisondevelopment.com">eric@newmadisondevelopment.com</a></dd>
+<dt>Eric</dt><dd>Eric Welch · <a href="mailto:eric@newmadisondevelopment.com">eric@newmadisondevelopment.com</a></dd>
 <dt>Office</dt><dd>902 Williamson Street<br>Madison, WI 53703</dd>
 </dl>
 </div></div></section>
