@@ -20,7 +20,7 @@ STATS = [("5", "projects"), ("256", "new apartments"), ("27,000", "square feet o
 PROJECTS = [
     dict(slug="starkweather-place", name="Starkweather Place", short="Starkweather Place",
          address="215 N Fair Oaks Avenue, Madison", area="East side", kind="Multifamily, new construction",
-         partner="NMD with Stone House Development", status="Completed", year="2024", units="112 apartments",
+         partner="", status="Completed", year="2024", units="112 apartments",
          card_img="sw-courtyard.jpg", card_hover="sw-entrance.jpg", hero_img="sw-courtyard.jpg", slideshow=True, keep_gallery=True, lat=43.1019, lon=-89.3307,
          lede="112 apartments on Starkweather Creek, with 2.5 acres of creek frontage.",
          facts=["112 apartments, four stories, on 4.33 acres.",
@@ -29,7 +29,7 @@ PROJECTS = [
                 "Designed by Potter Lawson. Built by McGann Construction.",
                 "Opened November 1, 2024. Full occupancy achieved spring 2026."],
          rows=[("Address", "215 N Fair Oaks Avenue, Madison"), ("Type", "Multifamily, new construction"),
-               ("Apartments", "112"), ("Site", "4.33 acres"), ("Partner", "Stone House Development"),
+               ("Apartments", "112"), ("Site", "4.33 acres"), ("Partners", "New Madison Development and Stone House Development"),
                ("Architect", "Potter Lawson"), ("Builder", "McGann Construction"), ("Opened", "November 1, 2024")],
          link=("starkweatherplace.com", "https://starkweatherplace.com"),
          gallery=[("sw-exterior.jpg", "Courtyard side", True),
@@ -42,7 +42,7 @@ PROJECTS = [
                   ("sw-fitness.jpg", "Fitness center", True)]),
     dict(slug="traders-way", name="Trader’s Way", short="Trader’s Way",
          address="6624 Old Sauk Road, Madison", area="West side", kind="Multifamily, new construction",
-         partner="NMD with Stone House Development", status="Completed", year="2026", units="144 apartments",
+         partner="", status="Completed", year="2026", units="144 apartments",
          card_img="tw-pool-building.jpg", card_hover="tw-street.jpg", hero_img="tw-street.jpg", slideshow=True, keep_gallery=True,
          slide_order=["tw-street.jpg", "tw-pool-building.jpg", "tw-lobby.jpg", "tw-clubroom.jpg", "tw-bar.jpg", "tw-fireplace.jpg",
                       "tw-game-room.jpg", "tw-mail.jpg", "tw-coworking.jpg", "tw-conference.jpg", "tw-yoga.jpg", "tw-sauna-interior.jpg",
@@ -53,7 +53,7 @@ PROJECTS = [
                 "Designed by Potter Lawson. Built by Stevens Construction.",
                 "Opened September 15, 2026."],
          rows=[("Address", "6624 Old Sauk Road, Madison"), ("Type", "Multifamily, new construction"),
-               ("Apartments", "144"), ("Site", "About four acres"), ("Partner", "Stone House Development"),
+               ("Apartments", "144"), ("Site", "About four acres"), ("Partners", "New Madison Development and Stone House Development"),
                ("Architect", "Potter Lawson"), ("Builder", "Stevens Construction"), ("Opened", "September 15, 2026")],
          link=("traderswayapts.com", "https://www.traderswayapts.com/"),
          gallery=[("tw-street.jpg", "Old Sauk Road", True), ("tw-fire-pit.jpg", "Courtyard fire pit", False), ("tw-pool-building.jpg", "Pool and courtyard", False),
@@ -344,7 +344,7 @@ def project_page(i, p):
 {top}
 <section class="p-body"><div class="wrap"><div class="p-grid">
 <dl class="p-facts">{rows}</dl>
-<div class="p-text"><p class="eyebrow">{e(p['partner'])}</p><p class="lede" style="margin-top:14px">{e(p['lede'])}</p><ul>{facts}</ul></div>
+<div class="p-text">{f'<p class="eyebrow">{e(p["partner"])}</p>' if p["partner"] else ""}<p class="lede" style="margin-top:{14 if p["partner"] else 0}px">{e(p['lede'])}</p><ul>{facts}</ul></div>
 </div></div></section>
 {recog_block(p)}
 {f'<section><div class="wrap"><div class="gallery">{gal}</div></div></section>' if gal else '<div style="height:clamp(24px,4vw,60px)"></div>'}
