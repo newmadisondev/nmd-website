@@ -69,7 +69,7 @@ PROJECTS = [
     dict(slug="the-tinsmith", name="The Tinsmith", short="The Tinsmith",
          address="828 E Main Street, Madison", area="East Main Street", kind="Adaptive reuse",
          partner="NMD project, William Butcher and Eric Welch", status="Completed", year="2020", units="About 9,000 SF",
-         card_img="tinsmith-exterior.jpg", card_hover="tinsmith-solarium.jpg", hero_img="tinsmith-exterior.jpg", slideshow=True, keep_gallery=True, lat=43.0812, lon=-89.3733,
+         card_img="tinsmith-exterior.jpg", card_pos="12% 50%", card_hover="tinsmith-solarium.jpg", hero_img="tinsmith-exterior.jpg", slideshow=True, keep_gallery=True, lat=43.0812, lon=-89.3733,
          lede="Two Trachte steel warehouses, kept instead of demolished, now a wedding and event venue.",
          facts=["Two joined Trachte steel warehouses, about 9,000 SF under barrel-vaulted roofs. Trachte was the Madison company that patented the prefabricated steel building.",
                 "Acquired in 2018 after a seven-year pursuit.",
@@ -239,7 +239,7 @@ def slides():
 # ---------- pages ----------
 def index():
     cards = "".join(f"""<a class="card" href="projects/{p['slug']}.html">
-<div class="ph"><img src="img/{p['card_img']}"{srcset(p['card_img']).replace('sizes="100vw"','sizes="(max-width:1100px) 80vw, 20vw"')} alt="{e(p['name'])}" loading="lazy"><img class="alt" src="img/{p['card_hover']}" alt="" loading="lazy"><span class="num">{i:02d}</span></div>
+<div class="ph"><img src="img/{p['card_img']}"{f' style="object-position:{p["card_pos"]}"' if p.get("card_pos") else ""}{srcset(p['card_img']).replace('sizes="100vw"','sizes="(max-width:1100px) 80vw, 20vw"')} alt="{e(p['name'])}" loading="lazy"><img class="alt" src="img/{p['card_hover']}" alt="" loading="lazy"><span class="num">{i:02d}</span></div>
 <h3>{e(p['name'])}</h3>
 <div class="meta">{e(p['area'])}<br>{e(p['units'])} · {e(p['year'])}</div>
 <span class="go">View project</span></a>""" for i, p in enumerate(PROJECTS, 1))
