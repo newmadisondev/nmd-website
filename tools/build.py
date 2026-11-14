@@ -124,6 +124,8 @@ PEOPLE = [("William Butcher", "Owner", '25+ years in Madison commercial real est
           ("Stone House Development", "Joint venture partner", "Starkweather Place and Trader’s Way.")]
 
 e = html.escape
+import hashlib
+CSS_V = hashlib.md5((ROOT / "assets/site.css").read_bytes()).hexdigest()[:8]
 BIG = {"starkweather-drone.jpg", "starkweather-creek.jpg", "tinsmith-solarium.jpg"}
 def srcset(img, up=""):
     if img in BIG:
@@ -146,7 +148,7 @@ def head(title, desc, depth=0):
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{up}img/nmd-logo-circle-ink.png">
 {FONTS}
-<link rel="stylesheet" href="{up}assets/site.css">
+<link rel="stylesheet" href="{up}assets/site.css?v={CSS_V}">
 </head>
 <body>
 """
