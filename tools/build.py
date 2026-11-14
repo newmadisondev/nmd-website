@@ -21,7 +21,7 @@ PROJECTS = [
     dict(slug="starkweather-place", name="Starkweather Place", short="Starkweather Place",
          address="215 N Fair Oaks Avenue, Madison", area="East side", kind="Multifamily, new construction",
          partner="NMD with Stone House Development", status="Completed", year="2024", units="112 apartments",
-         card_img="starkweather-rendering.jpg", hero_img="starkweather-drone.jpg", lat=43.0995, lon=-89.3410,
+         card_img="sw-courtyard.jpg", hero_img="starkweather-drone.jpg", lat=43.0995, lon=-89.3410,
          lede="112 apartments on Starkweather Creek, with 2.5 acres of restored creek frontage.",
          facts=["112 apartments, four stories, on 4.33 acres.",
                 "Site put under contract in 2020 in the Town of Blooming Grove, annexed into Madison, rezoned November 2022.",
@@ -32,9 +32,11 @@ PROJECTS = [
                ("Apartments", "112"), ("Site", "4.33 acres"), ("Partner", "Stone House Development"),
                ("Architect", "Potter Lawson"), ("Builder", "McGann Construction"), ("Opened", "November 1, 2024")],
          link=("starkweatherplace.com", "https://starkweatherplace.com"),
-         gallery=[("starkweather-rendering.jpg", "Rendering: Potter Lawson", True),
-                  ("starkweather-creek.jpg", "Starkweather Creek frontage", False),
-                  ("starkweather-drone.jpg", "Aerial, Starkweather Creek", False)]),
+         gallery=[("sw-courtyard.jpg", "Courtyard above Starkweather Creek", False), ("sw-entrance.jpg", "Main entrance", False),
+                  ("sw-clubroom.jpg", "Clubroom", False), ("sw-bar.jpg", "Clubroom bar", False),
+                  ("sw-fireplace.jpg", "Clubroom lounge", False), ("sw-booths.jpg", "Clubroom booths", False),
+                  ("sw-fitness.jpg", "Fitness center", False), ("starkweather-creek.jpg", "Starkweather Creek frontage", False),
+                  ("starkweather-rendering.jpg", "Rendering: Potter Lawson", True)]),
     dict(slug="traders-way", name="Trader’s Way", short="Trader’s Way",
          address="6624 Old Sauk Road, Madison", area="West side", kind="Multifamily, new construction",
          partner="NMD with Stone House Development", status="Completed", year="2026", units="144 apartments",
@@ -217,9 +219,10 @@ def map_svg():
 # ---------- hero slideshow ----------
 HERO_SLIDES = [("starkweather-place", "starkweather-drone.jpg"), ("the-tinsmith", "tinsmith-exterior.jpg"),
                ("traders-way", "tw-street.jpg"), ("northern-court", "state-line-lounge.jpg"),
-               ("the-tinsmith", "tinsmith-solarium.jpg"), ("traders-way", "tw-pool-building.jpg"),
-               ("210-s-dickinson", "dickinson-after-night.jpg"), ("traders-way", "tw-bar.jpg"),
-               ("northern-court", "state-line-patio-1413.jpg")]
+               ("starkweather-place", "sw-courtyard.jpg"), ("the-tinsmith", "tinsmith-solarium.jpg"),
+               ("traders-way", "tw-pool-building.jpg"), ("210-s-dickinson", "dickinson-after-night.jpg"),
+               ("starkweather-place", "sw-bar.jpg"), ("northern-court", "state-line-patio-1413.jpg"),
+               ("traders-way", "tw-bar.jpg")]
 
 def slides():
     by = {p["slug"]: p for p in PROJECTS}
