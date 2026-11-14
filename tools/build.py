@@ -27,7 +27,7 @@ PROJECTS = [
                 "Site put under contract in 2020 in the Town of Blooming Grove, annexed into Madison, rezoned November 2022.",
                 "Underground parking, rooftop solar, dog park, canoe and kayak storage, and 2.5 acres of restored Starkweather Creek frontage.",
                 "Designed by Potter Lawson. Built by McGann Construction.",
-                "Opened November 1, 2024. Fully stabilized spring 2026."],
+                "Opened November 1, 2024. Full occupancy achieved spring 2026."],
          rows=[("Address", "215 N Fair Oaks Avenue, Madison"), ("Type", "Multifamily, new construction"),
                ("Apartments", "112"), ("Site", "4.33 acres"), ("Partner", "Stone House Development"),
                ("Architect", "Potter Lawson"), ("Builder", "McGann Construction"), ("Opened", "November 1, 2024")],
