@@ -154,6 +154,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--patina);outline-off
 /* project pages */
 .p-hero{position:relative;height:min(78vh,780px);min-height:420px;overflow:hidden;background:#2a3328;color:#fff;display:flex;align-items:flex-end}
 .p-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.p-hero>img.slide{opacity:0;transition:opacity 1.6s ease}
+.p-hero>img.slide.on{opacity:1}
 .p-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,11,.5) 0%,rgba(10,12,11,0) 30%,rgba(10,12,11,0) 50%,rgba(10,12,11,.66) 100%)}
 .p-hero .wrap{position:relative;z-index:2;width:100%;padding-block:0 48px}
 .p-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(48px,8vw,124px);line-height:.92;letter-spacing:-.015em;margin:10px 0 0;text-wrap:balance}

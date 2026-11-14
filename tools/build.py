@@ -21,7 +21,7 @@ PROJECTS = [
     dict(slug="starkweather-place", name="Starkweather Place", short="Starkweather Place",
          address="215 N Fair Oaks Avenue, Madison", area="East side", kind="Multifamily, new construction",
          partner="NMD with Stone House Development", status="Completed", year="2024", units="112 apartments",
-         card_img="sw-courtyard.jpg", hero_img="sw-courtyard.jpg", lat=43.0995, lon=-89.3410,
+         card_img="sw-courtyard.jpg", hero_img="sw-courtyard.jpg", slideshow=True, lat=43.0995, lon=-89.3410,
          lede="112 apartments on Starkweather Creek, with 2.5 acres of restored creek frontage.",
          facts=["112 apartments, four stories, on 4.33 acres.",
                 "Site put under contract in 2020 in the Town of Blooming Grove, annexed into Madison, rezoned November 2022.",
@@ -44,7 +44,7 @@ PROJECTS = [
     dict(slug="traders-way", name="Trader’s Way", short="Trader’s Way",
          address="6624 Old Sauk Road, Madison", area="West side", kind="Multifamily, new construction",
          partner="NMD with Stone House Development", status="Completed", year="2026", units="144 apartments",
-         card_img="tw-grills.jpg", hero_img="tw-grills.jpg", lat=43.0830, lon=-89.5050,
+         card_img="tw-grills.jpg", hero_img="tw-grills.jpg", slideshow=True, lat=43.0830, lon=-89.5050,
          lede="144 apartments on a four-acre former farmstead on the west side.",
          facts=["144 apartments in three stories on a four-acre former farmstead, put under contract in 2023.",
                 "Rezoning approved unanimously by the Plan Commission, then by the City Council.",
@@ -55,7 +55,7 @@ PROJECTS = [
                ("Apartments", "144"), ("Site", "About four acres"), ("Partner", "Stone House Development"),
                ("Architect", "Potter Lawson"), ("Builder", "Stevens Construction"), ("Opened", "September 15, 2026")],
          link=None,
-         gallery=[("tw-fire-pit.jpg", "Courtyard fire pit", False), ("tw-pool-building.jpg", "Pool and courtyard", False),
+         gallery=[("tw-street.jpg", "Old Sauk Road", True), ("tw-fire-pit.jpg", "Courtyard fire pit", False), ("tw-pool-building.jpg", "Pool and courtyard", False),
                   ("tw-hot-tub.jpg", "Hot tub and pergola", False), ("tw-clubhouse-patio.jpg", "Clubhouse patio", False),
                   ("tw-sauna.jpg", "Sauna", False), ("tw-sauna-interior.jpg", "Sauna", False),
                   ("tw-clubroom.jpg", "Clubroom", False), ("tw-bar.jpg", "Clubroom bar", False),
@@ -67,7 +67,7 @@ PROJECTS = [
     dict(slug="the-tinsmith", name="The Tinsmith", short="The Tinsmith",
          address="828 E Main Street, Madison", area="East Main Street", kind="Adaptive reuse",
          partner="NMD project, William Butcher and Eric Welch", status="Completed", year="2020", units="About 9,000 SF",
-         card_img="tinsmith-solarium.jpg", hero_img="tinsmith-solarium.jpg", lat=43.0806, lon=-89.3727,
+         card_img="tinsmith-solarium.jpg", hero_img="tinsmith-solarium.jpg", slideshow=True, lat=43.0806, lon=-89.3727,
          lede="Two Trachte steel warehouses, kept instead of demolished, now a wedding and event venue.",
          facts=["Two joined Trachte steel warehouses, about 9,000 SF under barrel-vaulted roofs. Trachte was the Madison company that patented the prefabricated steel building.",
                 "Acquired in 2018 after a seven-year pursuit.",
@@ -330,8 +330,15 @@ def project_page(i, p):
         top = f"""<section class="p-framed"><div class="wrap"><p class="eyebrow">{eyebrow}</p><h1>{e(p['name'])}</h1>
 <figure style="margin:0;max-width:1100px"><img src="../img/{p['hero_img']}" alt="{e(p['name'])}">{f'<figcaption class="mono" style="color:var(--stone);margin-top:8px">{e(p["hero_cap"])}</figcaption>' if p.get("hero_cap") else ""}</figure></div></section>"""
     else:
+        if p.get("slideshow"):
+            imgs = [p["hero_img"]] + [g[0] for g in p["gallery"] if g[0] != p["hero_img"]
+                                      and "fitness" not in g[0] and "rendering" not in g[0]]
+            pics = "".join(f'<img class="slide{" on" if k == 0 else ""}" src="../img/{im}"{srcset(im, "../")} alt="{e(p["name"])}"{"" if k == 0 else " loading=\"lazy\""}>'
+                           for k, im in enumerate(imgs))
+        else:
+            pics = f'<img src="../img/{p["hero_img"]}"{srcset(p["hero_img"], "../")} alt="{e(p["name"])}">'
         top = f"""<section class="p-hero">
-<img src="../img/{p['hero_img']}"{srcset(p['hero_img'], "../")} alt="{e(p['name'])}">
+{pics}
 <div class="wrap"><p class="eyebrow">{eyebrow}</p><h1>{e(p['name'])}</h1></div>
 </section>"""
     return (head(f"{p['name']} · New Madison Development", p["lede"], 1) + header(1, bool(p.get("framed"))) + f"""<main>
@@ -344,6 +351,11 @@ def project_page(i, p):
 {f'<section><div class="wrap"><div class="gallery">{gal}</div></div></section>' if gal else '<div style="height:clamp(24px,4vw,60px)"></div>'}
 <section class="next"><div class="wrap"><a href="{nxt['slug']}.html"><span>Next project</span><b>{e(nxt['name'])}</b></a></div></section>
 </main>
+<script>
+(function(){{var s=document.querySelectorAll('.p-hero .slide'),i=0;
+if(s.length<2||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+setInterval(function(){{s[i].classList.remove('on');i=(i+1)%s.length;s[i].classList.add('on')}},5000);}})();
+</script>
 """ + footer(1))
 
 def main():

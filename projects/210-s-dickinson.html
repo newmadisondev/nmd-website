@@ -31,6 +31,11 @@
 <section><div class="wrap"><div class="gallery"><figure class=""><img src="../img/dickinson-before-corner.jpg" alt="Before" loading="lazy"><figcaption>Before</figcaption></figure><figure class=""><img src="../img/dickinson-after-night.jpg" alt="After" loading="lazy"><figcaption>After</figcaption></figure><figure class=""><img src="../img/dickinson-before-lot.jpg" alt="Before" loading="lazy"><figcaption>Before</figcaption></figure><figure class=""><img src="../img/dickinson-after-deck.jpg" alt="After" loading="lazy"><figcaption>After</figcaption></figure></div></div></section>
 <section class="next"><div class="wrap"><a href="northern-court.html"><span>Next project</span><b>Northern Court</b></a></div></section>
 </main>
+<script>
+(function(){var s=document.querySelectorAll('.p-hero .slide'),i=0;
+if(s.length<2||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+setInterval(function(){s[i].classList.remove('on');i=(i+1)%s.length;s[i].classList.add('on')},5000);})();
+</script>
 <footer class="site-foot"><div class="wrap">
 <img src="../img/nmd-logo-circle-white.png" alt="New Madison Development">
 <span>902 Williamson Street, Madison, WI 53703</span>

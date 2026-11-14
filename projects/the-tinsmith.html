@@ -20,7 +20,7 @@
 </div></header>
 <main>
 <section class="p-hero">
-<img src="../img/tinsmith-solarium.jpg" srcset="../img/tinsmith-solarium-1000.jpg 1000w, ../img/tinsmith-solarium.jpg 2000w" sizes="100vw" alt="The Tinsmith">
+<img class="slide on" src="../img/tinsmith-solarium.jpg" srcset="../img/tinsmith-solarium-1000.jpg 1000w, ../img/tinsmith-solarium.jpg 2000w" sizes="100vw" alt="The Tinsmith"><img class="slide" src="../img/tinsmith-before.jpg" alt="The Tinsmith" loading="lazy"><img class="slide" src="../img/tinsmith-exterior.jpg" alt="The Tinsmith" loading="lazy"><img class="slide" src="../img/tinsmith-main-hall.jpg" alt="The Tinsmith" loading="lazy"><img class="slide" src="../img/tinsmith-evening.jpg" alt="The Tinsmith" loading="lazy"><img class="slide" src="../img/tinsmith-tables.jpg" alt="The Tinsmith" loading="lazy">
 <div class="wrap"><p class="eyebrow">03 · Adaptive reuse · Completed</p><h1>The Tinsmith</h1></div>
 </section>
 <section class="p-body"><div class="wrap"><div class="p-grid">
@@ -34,6 +34,11 @@
 <section><div class="wrap"><div class="gallery"><figure class=""><img src="../img/tinsmith-before.jpg" alt="Before: the Kleenaire Corp. building" loading="lazy"><figcaption>Before: the Kleenaire Corp. building</figcaption></figure><figure class=""><img src="../img/tinsmith-exterior.jpg" alt="After: East Main Street" loading="lazy"><figcaption>After: East Main Street</figcaption></figure><figure class=""><img src="../img/tinsmith-main-hall.jpg" alt="The main hall. Photo: Anya Kubilus Photography" loading="lazy"><figcaption>The main hall. Photo: Anya Kubilus Photography</figcaption></figure><figure class=""><img src="../img/tinsmith-evening.jpg" alt="The solarium in the evening" loading="lazy"><figcaption>The solarium in the evening</figcaption></figure><figure class=""><img src="../img/tinsmith-tables.jpg" alt="Reception in the main hall. Photo: Anya Kubilus Photography" loading="lazy"><figcaption>Reception in the main hall. Photo: Anya Kubilus Photography</figcaption></figure></div></div></section>
 <section class="next"><div class="wrap"><a href="210-s-dickinson.html"><span>Next project</span><b>210 S Dickinson</b></a></div></section>
 </main>
+<script>
+(function(){var s=document.querySelectorAll('.p-hero .slide'),i=0;
+if(s.length<2||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+setInterval(function(){s[i].classList.remove('on');i=(i+1)%s.length;s[i].classList.add('on')},5000);})();
+</script>
 <footer class="site-foot"><div class="wrap">
 <img src="../img/nmd-logo-circle-white.png" alt="New Madison Development">
 <span>902 Williamson Street, Madison, WI 53703</span>

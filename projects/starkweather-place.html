@@ -20,7 +20,7 @@
 </div></header>
 <main>
 <section class="p-hero">
-<img src="../img/sw-courtyard.jpg" alt="Starkweather Place">
+<img class="slide on" src="../img/sw-courtyard.jpg" alt="Starkweather Place"><img class="slide" src="../img/sw-exterior.jpg" alt="Starkweather Place" loading="lazy"><img class="slide" src="../img/sw-patio.jpg" alt="Starkweather Place" loading="lazy"><img class="slide" src="../img/sw-entrance.jpg" alt="Starkweather Place" loading="lazy"><img class="slide" src="../img/sw-fire-ring.jpg" alt="Starkweather Place" loading="lazy"><img class="slide" src="../img/sw-creek-bank.jpg" alt="Starkweather Place" loading="lazy"><img class="slide" src="../img/starkweather-creek.jpg" srcset="../img/starkweather-creek-1000.jpg 1000w, ../img/starkweather-creek.jpg 2000w" sizes="100vw" alt="Starkweather Place" loading="lazy"><img class="slide" src="../img/sw-clubroom.jpg" alt="Starkweather Place" loading="lazy"><img class="slide" src="../img/sw-clubroom-2.jpg" alt="Starkweather Place" loading="lazy"><img class="slide" src="../img/sw-bar.jpg" alt="Starkweather Place" loading="lazy"><img class="slide" src="../img/sw-bar-2.jpg" alt="Starkweather Place" loading="lazy"><img class="slide" src="../img/sw-fireplace.jpg" alt="Starkweather Place" loading="lazy"><img class="slide" src="../img/sw-booths.jpg" alt="Starkweather Place" loading="lazy">
 <div class="wrap"><p class="eyebrow">01 · Multifamily, new construction · Completed</p><h1>Starkweather Place</h1></div>
 </section>
 <section class="p-body"><div class="wrap"><div class="p-grid">
@@ -31,6 +31,11 @@
 <section><div class="wrap"><div class="gallery"><figure class="wide"><img src="../img/sw-exterior.jpg" alt="Courtyard side" loading="lazy"><figcaption>Courtyard side</figcaption></figure><figure class=""><img src="../img/sw-patio.jpg" alt="Pergola and patio" loading="lazy"><figcaption>Pergola and patio</figcaption></figure><figure class=""><img src="../img/sw-entrance.jpg" alt="Main entrance" loading="lazy"><figcaption>Main entrance</figcaption></figure><figure class=""><img src="../img/sw-fire-ring.jpg" alt="Fire ring by the creek" loading="lazy"><figcaption>Fire ring by the creek</figcaption></figure><figure class=""><img src="../img/sw-creek-bank.jpg" alt="Starkweather Creek" loading="lazy"><figcaption>Starkweather Creek</figcaption></figure><figure class=""><img src="../img/starkweather-creek.jpg" alt="Restored creek frontage" loading="lazy"><figcaption>Restored creek frontage</figcaption></figure><figure class=""><img src="../img/sw-clubroom.jpg" alt="Clubroom" loading="lazy"><figcaption>Clubroom</figcaption></figure><figure class=""><img src="../img/sw-clubroom-2.jpg" alt="Clubroom" loading="lazy"><figcaption>Clubroom</figcaption></figure><figure class=""><img src="../img/sw-bar.jpg" alt="Clubroom bar" loading="lazy"><figcaption>Clubroom bar</figcaption></figure><figure class=""><img src="../img/sw-bar-2.jpg" alt="Clubroom bar" loading="lazy"><figcaption>Clubroom bar</figcaption></figure><figure class=""><img src="../img/sw-fireplace.jpg" alt="Clubroom lounge" loading="lazy"><figcaption>Clubroom lounge</figcaption></figure><figure class=""><img src="../img/sw-booths.jpg" alt="Clubroom booths" loading="lazy"><figcaption>Clubroom booths</figcaption></figure><figure class="wide"><img src="../img/sw-fitness.jpg" alt="Fitness center" loading="lazy"><figcaption>Fitness center</figcaption></figure><figure class="wide"><img src="../img/starkweather-rendering.jpg" alt="Rendering: Potter Lawson" loading="lazy"><figcaption>Rendering: Potter Lawson</figcaption></figure></div></div></section>
 <section class="next"><div class="wrap"><a href="traders-way.html"><span>Next project</span><b>Trader’s Way</b></a></div></section>
 </main>
+<script>
+(function(){var s=document.querySelectorAll('.p-hero .slide'),i=0;
+if(s.length<2||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+setInterval(function(){s[i].classList.remove('on');i=(i+1)%s.length;s[i].classList.add('on')},5000);})();
+</script>
 <footer class="site-foot"><div class="wrap">
 <img src="../img/nmd-logo-circle-white.png" alt="New Madison Development">
 <span>902 Williamson Street, Madison, WI 53703</span>
