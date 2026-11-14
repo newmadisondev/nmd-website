@@ -55,7 +55,7 @@ PROJECTS = [
          rows=[("Address", "6624 Old Sauk Road, Madison"), ("Type", "Multifamily, new construction"),
                ("Apartments", "144"), ("Site", "About four acres"), ("Partner", "Stone House Development"),
                ("Architect", "Potter Lawson"), ("Builder", "Stevens Construction"), ("Opened", "September 15, 2026")],
-         link=None,
+         link=("traderswayapts.com", "https://www.traderswayapts.com/"),
          gallery=[("tw-street.jpg", "Old Sauk Road", True), ("tw-fire-pit.jpg", "Courtyard fire pit", False), ("tw-pool-building.jpg", "Pool and courtyard", False),
                   ("tw-hot-tub.jpg", "Hot tub and pergola", False), ("tw-clubhouse-patio.jpg", "Clubhouse patio", False),
                   ("tw-sauna.jpg", "Sauna", False), ("tw-sauna-interior.jpg", "Sauna", False),
