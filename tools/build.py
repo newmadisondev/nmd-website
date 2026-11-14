@@ -32,7 +32,7 @@ PROJECTS = [
                ("Apartments", "112"), ("Site", "4.33 acres"), ("Partners", "New Madison Development with Stone House Development"),
                ("Architect", "Potter Lawson"), ("Builder", "McGann Construction"), ("Opened", "November 1, 2024")],
          link=("starkweatherplace.com", "https://starkweatherplace.com"),
-         gallery=[("sw-exterior.jpg", "Courtyard side", True),
+         gallery=[("sw-exterior.jpg", "Rear courtyard", True),
                   ("sw-courtyard.jpg", "Courtyard above Starkweather Creek", False), ("sw-patio.jpg", "Pergola and patio", False),
                   ("sw-entrance.jpg", "Main entrance", False), ("sw-fire-ring.jpg", "Fire ring by the creek", False),
                   ("sw-creek-bank.jpg", "Starkweather Creek", False), ("starkweather-creek.jpg", "Creek frontage", False), ("starkweather-drone.jpg", "Aerial, Starkweather Creek", True),
