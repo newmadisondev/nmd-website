@@ -209,14 +209,16 @@ def map_svg():
 </svg>"""
 
 # ---------- hero slideshow ----------
-HERO_SLIDES = {"starkweather-place": "starkweather-drone.jpg", "traders-way": "traders-way-rendering.jpg",
-               "the-tinsmith": "tinsmith-solarium.jpg", "210-s-dickinson": "dickinson-after-night.jpg",
-               "northern-court": "northern-court-patio.jpg"}
+HERO_SLIDES = [("starkweather-place", "starkweather-drone.jpg"), ("the-tinsmith", "tinsmith-exterior.jpg"),
+               ("traders-way", "traders-way-rendering.jpg"), ("northern-court", "state-line-lounge.jpg"),
+               ("the-tinsmith", "tinsmith-solarium.jpg"), ("210-s-dickinson", "dickinson-after-night.jpg"),
+               ("northern-court", "northern-court-patio.jpg")]
 
 def slides():
+    by = {p["slug"]: p for p in PROJECTS}
     out = []
-    for i, p in enumerate(PROJECTS):
-        img = HERO_SLIDES[p["slug"]]
+    for i, (slug, img) in enumerate(HERO_SLIDES):
+        p = by[slug]
         extra = ' fetchpriority="high"' if i == 0 else ' loading="lazy"'
         out.append(f'<img class="slide{" on" if i == 0 else ""}" src="img/{img}"{srcset(img)} alt="{e(p["name"])}" '
                    f'data-name="{e(p["name"])}" data-href="projects/{p["slug"]}.html"{extra}>')
