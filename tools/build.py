@@ -44,7 +44,10 @@ PROJECTS = [
     dict(slug="traders-way", name="Trader’s Way", short="Trader’s Way",
          address="6624 Old Sauk Road, Madison", area="West side", kind="Multifamily, new construction",
          partner="NMD with Stone House Development", status="Completed", year="2026", units="144 apartments",
-         card_img="tw-grills.jpg", hero_img="tw-grills.jpg", slideshow=True, lat=43.0830, lon=-89.5050,
+         card_img="tw-street.jpg", hero_img="tw-street.jpg", slideshow=True,
+         slide_order=["tw-street.jpg", "tw-pool-building.jpg", "tw-lobby.jpg", "tw-clubroom.jpg", "tw-bar.jpg", "tw-fireplace.jpg",
+                      "tw-game-room.jpg", "tw-mail.jpg", "tw-coworking.jpg", "tw-conference.jpg", "tw-yoga.jpg", "tw-sauna-interior.jpg",
+                      "tw-fire-pit.jpg", "tw-hot-tub.jpg", "tw-clubhouse-patio.jpg", "tw-sauna.jpg", "tw-grills.jpg"], lat=43.0830, lon=-89.5050,
          lede="144 apartments on a four-acre former farmstead on the west side.",
          facts=["144 apartments in three stories on a four-acre former farmstead, put under contract in 2023.",
                 "Rezoning approved unanimously by the Plan Commission, then by the City Council.",
@@ -63,6 +66,7 @@ PROJECTS = [
                   ("tw-game-room.jpg", "Game room", False), ("tw-mail.jpg", "Mail room", False),
                   ("tw-coworking.jpg", "Coworking", False), ("tw-conference.jpg", "Conference room", False),
                   ("tw-fitness.jpg", "Fitness center", False), ("tw-yoga.jpg", "Yoga studio", False),
+                  ("tw-grills.jpg", "Grills under the pergola", True),
                   ("traders-way-rendering.jpg", "Rendering: Potter Lawson", True)]),
     dict(slug="the-tinsmith", name="The Tinsmith", short="The Tinsmith",
          address="828 E Main Street, Madison", area="East Main Street", kind="Adaptive reuse",
@@ -331,7 +335,7 @@ def project_page(i, p):
 <figure style="margin:0;max-width:1100px"><img src="../img/{p['hero_img']}" alt="{e(p['name'])}">{f'<figcaption class="mono" style="color:var(--stone);margin-top:8px">{e(p["hero_cap"])}</figcaption>' if p.get("hero_cap") else ""}</figure></div></section>"""
     else:
         if p.get("slideshow"):
-            imgs = [p["hero_img"]] + [g[0] for g in p["gallery"] if g[0] != p["hero_img"]
+            imgs = p.get("slide_order") or [p["hero_img"]] + [g[0] for g in p["gallery"] if g[0] != p["hero_img"]
                                       and "fitness" not in g[0] and "rendering" not in g[0]]
             pics = "".join(f'<img class="slide{" on" if k == 0 else ""}" src="../img/{im}"{srcset(im, "../")} alt="{e(p["name"])}"{"" if k == 0 else " loading=\"lazy\""}>'
                            for k, im in enumerate(imgs))
