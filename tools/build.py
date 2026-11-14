@@ -70,7 +70,7 @@ PROJECTS = [
     dict(slug="210-s-dickinson", name="210 S Dickinson", short="210 S Dickinson",
          address="210 S Dickinson Street, Madison", area="Marquette neighborhood", kind="Adaptive reuse, build-to-suit office",
          partner="NMD project", status="Completed", year="2020", units="6,158 SF",
-         card_img="dickinson-after-1.jpg", hero_img="dickinson-after-2.jpg", framed=True, hero_cap="After", keep_gallery=True, lat=43.0843, lon=-89.3637,
+         card_img="dickinson-after-night.jpg", hero_img="dickinson-after-night.jpg", keep_gallery=True, lat=43.0843, lon=-89.3637,
          lede="A 1967 ice house and window-cleaning shop, rebuilt as creative office for Stephan & Brady.",
          facts=["A 1967 masonry building, built as an ice house and for decades the shop of Madison Window Cleaning.",
                 "Acquired in 2019.",
@@ -80,8 +80,8 @@ PROJECTS = [
                ("Type", "Adaptive reuse, build-to-suit office"), ("Size", "6,158 SF"), ("Built", "1967"),
                ("Acquired", "2019"), ("Delivered", "2020"), ("Tenant", "Stephan & Brady")],
          link=None,
-         gallery=[("dickinson-before-1.jpg", "Before, Dewey Court side", False), ("dickinson-after-1.jpg", "After, Dewey Court side", False),
-                  ("dickinson-before-2.jpg", "Before", False), ("dickinson-after-2.jpg", "After", False)]),
+         gallery=[("dickinson-before-corner.jpg", "Before", False), ("dickinson-after-night.jpg", "After", False),
+                  ("dickinson-before-lot.jpg", "Before", False), ("dickinson-after-deck.jpg", "After", False)]),
     dict(slug="northern-court", name="Northern Court", short="Northern Court",
          address="1401 and 1413 Northern Court, Madison", area="1 block off Williamson St", kind="Industrial reuse",
          partner="NMD project, William Butcher and Eric Welch", status="Completed", year="2017", units="About 12,000 SF",
@@ -210,7 +210,7 @@ def map_svg():
 
 # ---------- hero slideshow ----------
 HERO_SLIDES = {"starkweather-place": "starkweather-drone.jpg", "traders-way": "traders-way-rendering.jpg",
-               "the-tinsmith": "tinsmith-solarium.jpg", "210-s-dickinson": "dickinson-after-2.jpg",
+               "the-tinsmith": "tinsmith-solarium.jpg", "210-s-dickinson": "dickinson-after-night.jpg",
                "northern-court": "northern-court-patio.jpg"}
 
 def slides():
