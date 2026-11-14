@@ -223,9 +223,9 @@ def map_svg():
 </svg>"""
 
 # ---------- hero slideshow ----------
-HERO_SLIDES = [("starkweather-place", "starkweather-drone.jpg"), ("the-tinsmith", "tinsmith-exterior.jpg"),
+HERO_SLIDES = [("starkweather-place", "sw-courtyard.jpg"), ("the-tinsmith", "tinsmith-exterior.jpg"),
                ("traders-way", "tw-street.jpg"), ("northern-court", "state-line-lounge.jpg"),
-               ("starkweather-place", "sw-courtyard.jpg"), ("the-tinsmith", "tinsmith-solarium.jpg"),
+               ("starkweather-place", "starkweather-drone.jpg"), ("the-tinsmith", "tinsmith-solarium.jpg"),
                ("traders-way", "tw-pool-building.jpg"), ("210-s-dickinson", "dickinson-after-night.jpg"),
                ("starkweather-place", "sw-bar.jpg"), ("northern-court", "state-line-patio-1413.jpg"),
                ("traders-way", "tw-bar.jpg")]
