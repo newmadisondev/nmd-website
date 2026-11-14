@@ -71,7 +71,7 @@ PROJECTS = [
     dict(slug="the-tinsmith", name="The Tinsmith", short="The Tinsmith",
          address="828 E Main Street, Madison", area="East Main Street", kind="Adaptive reuse",
          partner="NMD project, William Butcher and Eric Welch", status="Completed", year="2020", units="About 9,000 SF",
-         card_img="tinsmith-solarium.jpg", hero_img="tinsmith-solarium.jpg", slideshow=True, lat=43.0806, lon=-89.3727,
+         card_img="tinsmith-solarium.jpg", hero_img="tinsmith-solarium.jpg", slideshow=True, keep_gallery=True, lat=43.0806, lon=-89.3727,
          lede="Two Trachte steel warehouses, kept instead of demolished, now a wedding and event venue.",
          facts=["Two joined Trachte steel warehouses, about 9,000 SF under barrel-vaulted roofs. Trachte was the Madison company that patented the prefabricated steel building.",
                 "Acquired in 2018 after a seven-year pursuit.",
