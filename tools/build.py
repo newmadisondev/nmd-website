@@ -361,7 +361,7 @@ setInterval(function(){{s[i].classList.remove('on');i=(i+1)%s.length;s[i].classL
 
 ABOUT_INTRO = [
     "New Madison Development is William Butcher and Eric Welch. Together we seek out and find unique development sites, both in the downtown core and in outlying areas that are overlooked. That's a specialty.",
-    "Our work includes two apartment communities, Starkweather Place and Trader's Way, totaling 257 units, and three industrial buildings reinvented as office and hospitality spaces.",
+    "Our work includes two apartment communities, Starkweather Place and Trader's Way, totaling 256 units, and three industrial buildings reinvented as office and hospitality spaces.",
 ]
 ABOUT_PEOPLE = [
     ("William Butcher", "Owner", 'William has worked in Madison real estate since 2002. As a broker he has represented clients on more than $250 million in closed transactions, many of them development acquisitions that became more than $1 billion in built assets. He represents buyers and sellers of development sites, office, retail, land and investment property, and landlords and tenants. He owns <a href="https://principalmadison.com" target="_blank" rel="noopener">Principal Madison</a>.'),
