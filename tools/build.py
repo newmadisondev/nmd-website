@@ -161,7 +161,7 @@ def header(depth=0, on_paper=False):
     home = f"{up}index.html"
     return f"""<header class="{cls}"><div class="wrap">
 <a href="{home}" aria-label="New Madison Development, home"><img src="{up}img/{logo}" alt="New Madison Development"></a>
-<nav aria-label="Main"><a href="{home}#projects">Projects</a><a href="{home}#map">Map</a><a href="{home}#contact">Contact</a></nav>
+<nav aria-label="Main"><a href="{home}#projects">Projects</a><a href="{home}#map">Map</a><a href="{up}about.html">About</a><a href="{home}#contact">Contact</a></nav>
 </div></header>
 """
 
@@ -359,7 +359,30 @@ setInterval(function(){{s[i].classList.remove('on');i=(i+1)%s.length;s[i].classL
 </script>
 """ + footer(1))
 
+ABOUT_INTRO = [
+    "New Madison Development is William Butcher and Eric Welch. Together we seek out and find unique development sites, both in the downtown core and in outlying areas that are overlooked. That's a specialty.",
+    "Our work includes two apartment communities built with Stone House Development, Starkweather Place and Trader's Way, and three industrial buildings reinvented as office and hospitality spaces.",
+]
+ABOUT_PEOPLE = [
+    ("William Butcher", "Owner", 'William has worked in Madison real estate since 2002. As a broker he has represented clients on more than $250 million in closed transactions, many of them development acquisitions that became more than $1 billion in built assets. He represents buyers and sellers of development sites, office, retail, land and investment property, and landlords and tenants. He owns <a href="https://principalmadison.com" target="_blank" rel="noopener">Principal Madison</a>.'),
+    ("Eric Welch", "Owner", "Eric's career has spanned construction and investing in multifamily in Madison, Milwaukee, and satellite areas for over 20 years, including the building of The Tinsmith, the Stephan & Brady building at 210 S Dickinson, and Northern Court."),
+]
+
+def about_page():
+    intro = "".join(f"<p>{e(t)}</p>" for t in ABOUT_INTRO)
+    people = "".join(f'<div class="person"><b>{e(n)}</b><span>{e(r)}</span><p>{t}</p></div>' for n, r, t in ABOUT_PEOPLE)
+    return (head("About · New Madison Development", ABOUT_INTRO[0]) + header(0, True) + f"""<main class="about">
+<section class="about-top"><div class="wrap">
+<h1 class="h-section">About.</h1>
+<div class="about-text">{intro}</div>
+</div></section>
+<section class="about-photo"><div class="wrap"><img src="img/about-partners.jpg" alt="Eric Welch and William Butcher"></div></section>
+<section class="people"><div class="wrap"><div class="people-grid two">{people}</div></div></section>
+</main>
+""" + footer(0))
+
 def main():
+    (ROOT / "about.html").write_text(about_page(), encoding="utf-8")
     (ROOT / "index.html").write_text(index(), encoding="utf-8")
     (ROOT / "projects").mkdir(exist_ok=True)
     for i, p in enumerate(PROJECTS):

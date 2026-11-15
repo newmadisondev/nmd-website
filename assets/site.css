@@ -189,3 +189,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--patina);outline-off
 .p-framed{padding-top:calc(130px + env(safe-area-inset-top,0px))}
 .p-framed h1{font-family:var(--serif);font-weight:400;font-size:clamp(48px,8vw,124px);line-height:.92;letter-spacing:-.015em;margin:10px 0 clamp(28px,4vw,48px);text-wrap:balance}
 .p-framed img{width:100%;max-width:1100px;aspect-ratio:16/9;object-fit:cover;background:var(--paper-2)}
+
+/* about page */
+.about-top{padding-block:clamp(170px,20vw,240px) clamp(48px,6vw,80px)}
+.about-text{margin-top:clamp(32px,4vw,56px);max-width:46em}
+.about-text p{font-size:clamp(18px,1.5vw,21px);line-height:1.6;font-weight:300;margin:0 0 1.1em}
+.about-text p:first-child{font-size:clamp(22px,2.2vw,30px);line-height:1.4;letter-spacing:-.01em}
+.people-grid.two{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:0}
+.people-grid.two .person p{max-width:34em;font-size:17px;line-height:1.6;color:var(--ink)}
+@media (max-width:860px){.people-grid.two{grid-template-columns:1fr}}
+.about-photo{padding-bottom:clamp(48px,6vw,80px)}
+.about-photo img{width:100%;max-width:980px;aspect-ratio:14/9;object-fit:cover}
