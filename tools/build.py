@@ -360,7 +360,7 @@ setInterval(function(){{s[i].classList.remove('on');i=(i+1)%s.length;s[i].classL
 """ + footer(1))
 
 ABOUT_INTRO = [
-    "New Madison Development is William Butcher and Eric Welch. Together we seek out and find unique development sites, both in the downtown core and in outlying areas that are overlooked. That's a specialty.",
+    "William Butcher and Eric Welch founded New Madison Development in 2017. Together we seek out and find unique development sites, both in the downtown core and in outlying areas that are overlooked. That's a specialty.",
     "Our work includes two apartment communities, Starkweather Place and Trader's Way, totaling 256 units, and three industrial buildings reinvented as office and hospitality spaces.",
 ]
 ABOUT_PEOPLE = [
