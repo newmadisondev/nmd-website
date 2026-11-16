@@ -376,7 +376,7 @@ def about_page():
 <h1 class="h-section">About.</h1>
 <div class="about-text">{intro}</div>
 </div></section>
-<section class="about-photo"><div class="wrap"><img src="img/about-partners-2.jpg" alt="William Butcher and Eric Welch"></div></section>
+<section class="about-photo"><div class="wrap"><img src="img/about-partners-3.jpg" alt="William Butcher and Eric Welch"></div></section>
 <section class="people"><div class="wrap"><div class="people-grid two">{people}</div></div></section>
 </main>
 """ + footer(0))
