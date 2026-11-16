@@ -1,3 +1,5 @@
+import datetime
+import json
 """Builds the New Madison Development site from the facts below.
 
 Every fact here comes from content/content-v3.md. Edit this file, then run
@@ -131,7 +133,19 @@ def srcset(img, up=""):
         return f' srcset="{up}img/{stem}-1000.jpg 1000w, {up}img/{img} 2000w" sizes="100vw"'
     return ""
 
-def head(title, desc, depth=0, share="share-home.jpg"):
+SITE = "https://newmadisondevelopment.com"
+ORG_LD = json.dumps({
+    "@context": "https://schema.org", "@type": "Organization",
+    "name": "New Madison Development", "alternateName": "NMD", "url": SITE + "/",
+    "logo": SITE + "/img/nmd-logo-circle-ink.png", "foundingDate": "2017",
+    "description": "Real estate development company in Madison, Wisconsin. Apartment communities and adaptive reuse of older buildings.",
+    "address": {"@type": "PostalAddress", "streetAddress": "902 Williamson St", "addressLocality": "Madison",
+                "addressRegion": "WI", "postalCode": "53703", "addressCountry": "US"},
+    "telephone": "+1-608-301-5008", "areaServed": "Madison, Wisconsin",
+    "founder": [{"@type": "Person", "name": "William Butcher"}, {"@type": "Person", "name": "Eric Welch"}],
+})
+
+def head(title, desc, depth=0, share="share-home.jpg", path=""):
     up = "../" * depth
     return f"""<!doctype html>
 <html lang="en">
@@ -140,12 +154,17 @@ def head(title, desc, depth=0, share="share-home.jpg"):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
+<link rel="canonical" href="{SITE}/{path}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="New Madison Development">
+<meta property="og:url" content="{SITE}/{path}">
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:image" content="https://newmadisondevelopment.com/img/{share}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{ORG_LD}</script>
 <link rel="icon" href="{up}img/nmd-logo-circle-ink.png">
 {FONTS}
 <link rel="stylesheet" href="{up}assets/site.css?v={CSS_V}">
@@ -249,7 +268,7 @@ def index():
                   for i, p in enumerate(PROJECTS, 1))
     stats = "".join(f'<div class="stat"><b>{e(n)}</b><span>{e(l)}</span></div>' for n, l in STATS)
     people = "".join(f'<div class="person"><b>{e(n)}</b><span>{e(r)}</span>{f"<p>{t}</p>" if t else ""}</div>' for n, r, t in PEOPLE)
-    return (head("New Madison Development", "Madison, Wisconsin development company led by William Butcher and Eric Welch. New housing and new uses for older buildings with historic character.")
+    return (head("New Madison Development | Real Estate Developer in Madison, WI", "Madison, Wisconsin real estate development company led by William Butcher and Eric Welch. New apartment communities and new uses for older buildings with historic character.")
             + header() + f"""<main>
 <section class="hero">
 {slides()}
@@ -341,7 +360,7 @@ def project_page(i, p):
 {pics}
 <div class="wrap"><p class="eyebrow">{eyebrow}</p><h1>{e(p['name'])}</h1></div>
 </section>"""
-    return (head(f"{p['name']} · New Madison Development", p["lede"], 1, f"share-{p['slug']}.jpg") + header(1, bool(p.get("framed"))) + f"""<main>
+    return (head(f"{p['name']}, Madison, WI · New Madison Development", f"{p['name']}, {p['address']}, WI. {p['lede']}", 1, f"share-{p['slug']}.jpg", f"projects/{p['slug']}.html") + header(1, bool(p.get("framed"))) + f"""<main>
 {top}
 <section class="p-body"><div class="wrap"><div class="p-grid">
 <dl class="p-facts">{rows}</dl>
@@ -370,7 +389,7 @@ ABOUT_PEOPLE = [
 def about_page():
     intro = "".join(f"<p>{e(t)}</p>" for t in ABOUT_INTRO)
     people = "".join(f'<div class="person"><b>{e(n)}</b><span>{e(r)}</span><p>{t}</p></div>' for n, r, t in ABOUT_PEOPLE)
-    return (head("About · New Madison Development", ABOUT_INTRO[0]) + header(0, True) + f"""<main class="about">
+    return (head("About William Butcher and Eric Welch · New Madison Development", ABOUT_INTRO[0], path="about.html") + header(0, True) + f"""<main class="about">
 <section class="about-top"><div class="wrap">
 <h1 class="h-section">About.</h1>
 <div class="about-text">{intro}</div>
@@ -386,6 +405,11 @@ def main():
     (ROOT / "projects").mkdir(exist_ok=True)
     for i, p in enumerate(PROJECTS):
         (ROOT / "projects" / f"{p['slug']}.html").write_text(project_page(i, p), encoding="utf-8")
+    urls = ["", "about.html"] + [f"projects/{p['slug']}.html" for p in PROJECTS]
+    today = datetime.date.today().isoformat()
+    (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "".join(f"<url><loc>{SITE}/{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n", encoding="utf-8")
+    (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     print("built", 1 + len(PROJECTS), "pages")
 
 if __name__ == "__main__":
