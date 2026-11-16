@@ -365,7 +365,7 @@ ABOUT_INTRO = [
 ]
 ABOUT_PEOPLE = [
     ("William Butcher", "Owner", 'William has worked in Madison real estate since 2002 as an agent, broker, investor, and developer. As a broker he has represented clients on more than $250 million in closed transactions, many of them development acquisitions that became more than $1 billion in built assets. He represents buyers and sellers of development sites, office, retail, land and investment property, and landlords and tenants. He owns <a href="https://principalmadison.com" target="_blank" rel="noopener">Principal Madison</a>.'),
-    ("Eric Welch", "Owner", "Born and raised in Monona, Eric's career has spanned construction, investing, and developing multifamily and retail real estate in Madison, Milwaukee, and satellite communities."),
+    ("Eric Welch", "Owner", "Born and raised in Monona, Eric's career has spanned construction, investing, and developing multifamily and retail real estate in Madison, Milwaukee, and satellite communities. He continues to operate his own painting and contracting company, established in 2004."),
 ]
 
 def about_page():
