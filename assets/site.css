@@ -97,7 +97,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--patina);outline-off
 @media (max-width:640px){.cards{grid-auto-columns:78%}}
 
 /* night band with map */
-.night{background:var(--night);color:var(--night-fg);padding-block:clamp(80px,10vw,140px)}
+.night{background:var(--night);color:var(--night-fg);padding-block:clamp(36px,4vw,56px) clamp(80px,10vw,140px)}
 .night .eyebrow{color:var(--night-dim)}
 .night-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,80px);align-items:center;margin-top:clamp(36px,4vw,56px)}
 @media (max-width:960px){.night-grid{grid-template-columns:1fr}}
