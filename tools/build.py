@@ -12,7 +12,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,300&family=Hanken+Grotesk:wght@200;300;400;500&family=IBM+Plex+Mono:wght@400;600&display=swap">')
 
 COMPANY = ("New Madison Development is a Madison, Wisconsin development company led by partners "
-           "William Butcher and Eric Welch. NMD builds new housing and gives older industrial buildings new uses.")
+           "William Butcher and Eric Welch. NMD builds new housing and gives older buildings with historic character new uses.")
 
 STATS = [("5", "projects"), ("256", "new apartments"), ("27,000", "square feet of industrial buildings reused (about)")]
 
@@ -249,7 +249,7 @@ def index():
                   for i, p in enumerate(PROJECTS, 1))
     stats = "".join(f'<div class="stat"><b>{e(n)}</b><span>{e(l)}</span></div>' for n, l in STATS)
     people = "".join(f'<div class="person"><b>{e(n)}</b><span>{e(r)}</span>{f"<p>{t}</p>" if t else ""}</div>' for n, r, t in PEOPLE)
-    return (head("New Madison Development", "Madison, Wisconsin development company led by William Butcher and Eric Welch. New housing and new uses for older industrial buildings.")
+    return (head("New Madison Development", "Madison, Wisconsin development company led by William Butcher and Eric Welch. New housing and new uses for older buildings with historic character.")
             + header() + f"""<main>
 <section class="hero">
 {slides()}
