@@ -119,8 +119,7 @@ RECOGNITION = [("Adaptive Reuse Project of the Year 2021", "The Tinsmith · Madi
                ("Best venue in Wisconsin, four years running", "The Tinsmith · Wisconsin Bride")]
 
 PEOPLE = [("William Butcher", "Owner", '25+ years in Madison commercial real estate, development, and brokerage. Owner <a href="https://principalmadison.com" target="_blank" rel="noopener">Principal Madison</a>'),
-          ("Eric Welch", "Owner", "20+ years investing, building, and developing in Madison."),
-          ("Stone House Development", "Joint venture partner", "Starkweather Place and Trader’s Way.")]
+          ("Eric Welch", "Owner", "20+ years investing, building, and developing in Madison.")]
 
 e = html.escape
 import hashlib
@@ -319,7 +318,7 @@ def recog_block(p):
 
 def project_page(i, p):
     nxt = PROJECTS[(i + 1) % len(PROJECTS)]
-    rows = "".join(f"<div><dt>{e(a)}</dt><dd>{e(b)}</dd></div>" for a, b in p["rows"])
+    rows = "".join(f"<div><dt>{e(a)}</dt><dd>{e(b).replace(" with Stone House Development", "<br>with Stone House Development")}</dd></div>" for a, b in p["rows"])
     if p["link"]:
         rows += f'<div><dt>Website</dt><dd><a href="{p["link"][1]}" target="_blank" rel="noopener">{e(p["link"][0])}</a></dd></div>'
     facts = "".join(f"<li>{e(f)}</li>" for f in p["facts"])
