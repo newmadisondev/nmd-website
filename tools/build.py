@@ -142,7 +142,7 @@ def head(title, desc, depth=0, share="share-home.jpg"):
 <meta name="description" content="{e(desc)}">
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
-<meta property="og:image" content="https://newmadisondev.github.io/nmd-website/img/{share}">
+<meta property="og:image" content="https://newmadisondevelopment.com/img/{share}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
