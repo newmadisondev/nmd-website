@@ -364,8 +364,8 @@ ABOUT_INTRO = [
     "Our work includes two apartment communities, Starkweather Place and Trader's Way, totaling 256 units, and three industrial buildings reinvented as office and hospitality spaces.",
 ]
 ABOUT_PEOPLE = [
-    ("Eric Welch", "Owner", "Born and raised in Monona, Eric's career has spanned construction, investing, and developing multifamily and retail real estate in Madison, Milwaukee, and satellite communities."),
     ("William Butcher", "Owner", 'William has worked in Madison real estate since 2002 as an agent, broker, investor, and developer. As a broker he has represented clients on more than $250 million in closed transactions, many of them development acquisitions that became more than $1 billion in built assets. He represents buyers and sellers of development sites, office, retail, land and investment property, and landlords and tenants. He owns <a href="https://principalmadison.com" target="_blank" rel="noopener">Principal Madison</a>.'),
+    ("Eric Welch", "Owner", "Born and raised in Monona, Eric's career has spanned construction, investing, and developing multifamily and retail real estate in Madison, Milwaukee, and satellite communities."),
 ]
 
 def about_page():
@@ -376,7 +376,7 @@ def about_page():
 <h1 class="h-section">About.</h1>
 <div class="about-text">{intro}</div>
 </div></section>
-<section class="about-photo"><div class="wrap"><img src="img/about-partners.jpg" alt="Eric Welch and William Butcher"></div></section>
+<section class="about-photo"><div class="wrap"><img src="img/about-partners-2.jpg" alt="William Butcher and Eric Welch"></div></section>
 <section class="people"><div class="wrap"><div class="people-grid two">{people}</div></div></section>
 </main>
 """ + footer(0))
