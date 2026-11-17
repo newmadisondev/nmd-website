@@ -389,7 +389,7 @@ ABOUT_PEOPLE = [
 def about_page():
     intro = "".join(f"<p>{e(t)}</p>" for t in ABOUT_INTRO)
     people = "".join(f'<div class="person"><b>{e(n)}</b><span>{e(r)}</span><p>{t}</p></div>' for n, r, t in ABOUT_PEOPLE)
-    return (head("About William Butcher and Eric Welch · New Madison Development", ABOUT_INTRO[0], path="about.html") + header(0, True) + f"""<main class="about">
+    return (head("About William Butcher and Eric Welch · New Madison Development", "New Madison Development was founded in 2017 by William Butcher and Eric Welch. Apartment communities and adaptive reuse projects in Madison, Wisconsin.", path="about.html") + header(0, True) + f"""<main class="about">
 <section class="about-top"><div class="wrap">
 <h1 class="h-section">About.</h1>
 <div class="about-text">{intro}</div>
