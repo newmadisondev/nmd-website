@@ -268,7 +268,7 @@ def index():
                   for i, p in enumerate(PROJECTS, 1))
     stats = "".join(f'<div class="stat"><b>{e(n)}</b><span>{e(l)}</span></div>' for n, l in STATS)
     people = "".join(f'<div class="person"><b>{e(n)}</b><span>{e(r)}</span>{f"<p>{t}</p>" if t else ""}</div>' for n, r, t in PEOPLE)
-    return (head("New Madison Development | Reimagining Real Estate Development in Madison, WI", "Madison, Wisconsin real estate development company led by William Butcher and Eric Welch. New apartment communities and new uses for older buildings with historic character.")
+    return (head("New Madison Development | Creative Real Estate Development in Madison, WI", "Madison, Wisconsin real estate development company led by William Butcher and Eric Welch. New apartment communities and new uses for older buildings with historic character.")
             + header() + f"""<main>
 <section class="hero">
 {slides()}
