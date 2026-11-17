@@ -155,6 +155,7 @@ def head(title, desc, depth=0, share="share-home.jpg", path=""):
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{SITE}/{path}">
+<meta name="msvalidate.01" content="FD53B0A99CB5ABA8A6427D1036D3E9B5">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="New Madison Development">
 <meta property="og:url" content="{SITE}/{path}">
