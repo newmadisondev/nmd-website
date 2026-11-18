@@ -16,7 +16,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
 COMPANY = ("New Madison Development is a Madison, Wisconsin development company led by partners "
            "William Butcher and Eric Welch. NMD builds new housing and gives older buildings with historic character new uses.")
 
-STATS = [("5", "projects"), ("256", "new apartments"), ("27,000", "square feet of industrial buildings reused (about)")]
+STATS = [("5", "projects"), ("256", "new apartments"), ("27,000", "square feet of industrial buildings reused")]
 
 # lat/lon from OpenStreetMap address lookup; nudge separates pins that sit on top of each other
 PROJECTS = [
