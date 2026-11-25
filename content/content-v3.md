@@ -31,7 +31,8 @@ Photos: photos/starkweather-place-rendering.jpg (rendering; a drone photo may be
 6624 Old Sauk Road, Madison (west side). Multifamily, new construction. NMD with Stone House Development.
 - 144 apartments in three stories on a four-acre former farmstead, put under contract in 2023.
 - Rezoning approved unanimously by the Plan Commission, then by the City Council.
-- Outdoor pool, hot tub, sauna, coworking space, green roofs, underground parking with EV charging.
+- Outdoor pool, with a year-round hot tub and sauna on a radiant-heated concrete deck.
+- Coworking space, green roofs, rooftop solar, underground parking with EV charging.
 - Designed by Potter Lawson. Built by Stevens Construction.
 - Opened September 15, 2026.
 Photo: photos/traders-way-rendering.jpg
